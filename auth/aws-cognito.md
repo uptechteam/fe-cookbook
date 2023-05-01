@@ -63,11 +63,11 @@ Choose authentication flow.
 
 10. Get User Pool Id
 
-<img width="1321" alt="Screenshot 2023-04-27 at 16 24 06" src="https://user-images.githubusercontent.com/26439649/234875662-be9d19f1-192a-43c9-8ca6-a48e5c433860.png">
+<img width="1321" alt="234875662-be9d19f1-192a-43c9-8ca6-a48e5c433860" src="https://user-images.githubusercontent.com/26439649/235461511-d0554e1d-9f41-4415-9eb6-4fd47b7d8df2.png">
 
 11. Get ClientId (User Pool Web Client Id) on *App Integration* tab
 
-<img width="1309" alt="Screenshot 2023-04-27 at 16 26 07" src="https://user-images.githubusercontent.com/26439649/234876199-25aade18-33de-468b-9b24-4e94dea8c7b1.png">
+<img width="1309" alt="234876199-25aade18-33de-468b-9b24-4e94dea8c7b1" src="https://user-images.githubusercontent.com/26439649/235461672-191d3db0-951f-4456-9cc3-24aa985ce779.png">
 
 ### Create identity provider
 
@@ -77,7 +77,7 @@ Choose authentication flow.
 
 2. Enter *User Pool Id* and *App client id* from created User Pool.
 
-<img width="1381" alt="Screenshot 2023-04-27 at 16 03 09" src="https://user-images.githubusercontent.com/26439649/234870068-a7b9ce5e-9291-43f8-aeb4-d664305c9907.png">
+<img width="1381" alt="234870068-a7b9ce5e-9291-43f8-aeb4-d664305c9907" src="https://user-images.githubusercontent.com/26439649/235461925-2d361325-4219-48c3-98f7-0aa3a267278b.png">
 
 3. Allow creating identity roles
 
@@ -85,16 +85,17 @@ Choose authentication flow.
 
 4. Get Identity Pool id
 
-<img width="880" alt="Screenshot 2023-04-27 at 16 07 19" src="https://user-images.githubusercontent.com/26439649/234871055-bab30045-ac4e-4929-8a96-0aad6c80f137.png">
+<img width="880" alt="234871055-bab30045-ac4e-4929-8a96-0aad6c80f137" src="https://user-images.githubusercontent.com/26439649/235461261-f7b3ea04-b3c2-424b-b149-71c4bffe7356.png">
+
 
 ### Add credentials to the project
 Create *.env* file
 ```js
 // .env
-REACT_APP_AWS_REGION=us-east-1
-REACT_APP_AWS_POOL_ID=us-east-1_F2Yb8FCtz
-REACT_APP_AWS_WEB_CLIENT_ID=62si3qgd7tpsj9i4tcdsncqfp2
-REACT_APP_AWS_IDENTITY=us-east-1:940ad2d5-f5db-4db3-909e-657d66f1d4a4
+REACT_APP_AWS_REGION=XX-XXXX-X
+REACT_APP_AWS_POOL_ID=XX-XXXX-X_abcd1234
+REACT_APP_AWS_WEB_CLIENT_ID=a1b2c3d4e5f6g7h8i9j0k1l2m3
+REACT_APP_AWS_IDENTITY=XX-XXXX-X:XXXXXXXX-XXXX-1234-abcd-1234567890ab
 ```
 
 Create file *aws-exports.js*
