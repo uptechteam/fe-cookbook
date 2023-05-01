@@ -88,6 +88,14 @@ Choose authentication flow.
 <img width="880" alt="Screenshot 2023-04-27 at 16 07 19" src="https://user-images.githubusercontent.com/26439649/234871055-bab30045-ac4e-4929-8a96-0aad6c80f137.png">
 
 ### Add credentials to the project
+Create *.env* file
+```js
+// .env
+REACT_APP_AWS_REGION=us-east-1
+REACT_APP_AWS_POOL_ID=us-east-1_F2Yb8FCtz
+REACT_APP_AWS_WEB_CLIENT_ID=62si3qgd7tpsj9i4tcdsncqfp2
+REACT_APP_AWS_IDENTITY=us-east-1:940ad2d5-f5db-4db3-909e-657d66f1d4a4
+```
 
 Create file *aws-exports.js*
 ```js
@@ -95,10 +103,10 @@ Create file *aws-exports.js*
 
 const config = {
     Auth: {
-        region: "us-east-1",
-        userPoolId: "us-east-1_F2Yb8FCtz",
-        userPoolWebClientId: "62si3qgd7tpsj9i4tcdsncqfp2",
-        identityPoolId: "us-east-1:940ad2d5-f5db-4db3-909e-657d66f1d4a4"
+        region: process.env.REACT_APP_AWS_REGION,
+        userPoolId: process.env.REACT_APP_AWS_POOL_ID,
+        userPoolWebClientId: process.env.REACT_APP_AWS_WEB_CLIENT_ID,
+        identityPoolId: process.env.REACT_APP_AWS_IDENTITY
     }
 }
 
@@ -122,7 +130,7 @@ Run `amplify init`.
 ### Add authentication to the project(automaticaly creates User Pool)
 
 1. Run `amplify add auth`.
-2. Choose preffered authentication method(you can change it afterwards by CLI or through AWS Console).
+2. Choose preferred authentication method(you can change it afterwards by CLI or through AWS Console).
 3. Run `amplify push`.
 4. You have file *aws-exports.js*
 
@@ -131,9 +139,9 @@ Run `amplify init`.
 ### Add Amplify to the project
 
 1. Run `npm install aws-amplify` or `yarn add aws-amplify`.
-2. Configure Amplify creds.
+2. Configure Amplify credentials.
 ```js
-// App.js or _app.js for Next.js
+// App.js
 
 import { Amplify } from "aws-amplify"; 
 import awsConfig from "./aws-exports";
