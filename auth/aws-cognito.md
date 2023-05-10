@@ -1,9 +1,20 @@
 # AWS-Cognito-auth
 
-1. Create User Pool in Cognito
+1. Configure User Pool in AWS Console 
+    a. Create User Pool in Cognito
+    b. Create identity provider
+    c. Add credentials to the project
 2. Configure Amplify locally
+    a. Install Amplify CLI
+    b. Init Amplify in the project
+    c. Add authentication to the project(automaticaly creates User Pool)   
 3. Create simple authorization
-4. Create Protected route
+    a. Add Amplify to the project
+    b. Add authorization with predefined components
+    c. Add custom authorization
+4. Add social Sign-in(Google, Facebook ...)
+    a. Configure providers in Cognito
+    b. Use providers in your app
 5. Issues with Next.js
 
 There are 2 ways to add Amplify to your project. First, you can do it manually through AWS Console. Second, do it using Amplify CLI locally.
@@ -126,7 +137,7 @@ Run `npm install -g @aws-amplify/cli`.
 
 Run `amplify init`.
 
-> Note: if you don't have Amplify profile locally, you need to find your ***accessKeyId*** and ***secretAccessKey*** in AWS Console.(How to find?)
+> Note: if you don't have Amplify profile locally, you need to find your ***accessKeyId*** and ***secretAccessKey*** in AWS Console.
 
 ### Add authentication to the project(automaticaly creates User Pool)
 
@@ -396,3 +407,23 @@ function HomePage(props) {
 
 export default CustomAuthenticator;
 ```
+## Add social Sign-in(Google, Facebook ...)
+
+### Setup your auth provider
+
+Detailed instruction for every provider you can find [here](https://docs.amplify.aws/lib/auth/social/q/platform/js/#setup-your-auth-provider).
+
+### Configure providers in Cognito
+
+1. In the User Pool dashboard, click on "Federated identities" on the left sidebar.
+2. Choose your identity pool or create a new one.
+3. Find "Authentication providers" section (if you have identity pool click on "Edit identity pool")
+4. Enter appropriate credentials.
+
+<img width="1018" alt="Screenshot 2023-05-10 at 14 37 07" src="https://github.com/uptechteam/fe-cookbook/assets/26439649/a6958e9c-9b25-4816-a095-3cce63d59bce">
+
+5. Choose the social identity provider you want to enable (e.g., Google, Facebook, or Amazon).
+Follow the instructions provided by the chosen social identity provider to set up the integration and obtain the necessary credentials.
+Enter the required information and save the configuration.
+
+### Use providers in your app
