@@ -422,7 +422,15 @@ Detailed instruction for every provider you can find [here](https://docs.amplify
 
 <img width="1018" alt="Screenshot 2023-05-10 at 14 37 07" src="https://github.com/uptechteam/fe-cookbook/assets/26439649/a6958e9c-9b25-4816-a095-3cce63d59bce">
 
-5. Expose your *aws-exports.js* file
+5. Go to User Pools -> Your User Pool -> App Integration and choose App Client.
+6. Click on Edit in Hosted UI section.
+7. Add *"Allowed callback URLs"* and *"Allowed sign-out URLs"*
+
+> When configuring social identity providers in your AWS Cognito User Pool, you will need to provide the Redirect Sign-in URI and Redirect Sign-out URI for each social provider. These URIs should match the corresponding routes in your application.
+>   
+> For example, if your application's sign-in route is **/signin** and your sign-out route is **/signout**, the Redirect Sign-in URI would be **https://your-app-domain.com/signin** and the Redirect Sign-out URI would be **https://your-app-domain.com/signout**.
+
+8. Expose your *aws-exports.js* file
 
 ```js
 // aws-exports.js
@@ -450,8 +458,4 @@ export default config;
 1. Run `amplify update auth`.
 2. Select the social identity providers you want to enable and enter the necessary credentials.
 3. Enter redirect sign-in URI and redirect sign-out URI.
-
-> When configuring social identity providers in your AWS Cognito User Pool, you will need to provide the Redirect Sign-in URI and Redirect Sign-out URI for each social provider. These URIs should match the corresponding routes in your application.
-> For example, if your application's sign-in route is **/signin** and your sign-out route is **/signout**, the Redirect Sign-in URI would be **https://your-app-domain.com/signin** and the Redirect Sign-out URI would be **https://your-app-domain.com/signout**.
-    
 4. Run `amplify push`.
