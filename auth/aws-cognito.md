@@ -1,20 +1,20 @@
 # AWS-Cognito-auth
 
 1. Configure User Pool in AWS Console 
-    a. Create User Pool in Cognito
-    b. Create identity provider
-    c. Add credentials to the project
+    1. Create User Pool in Cognito
+    2. Create identity provider
+    3. Add credentials to the project
 2. Configure Amplify locally
-    a. Install Amplify CLI
-    b. Init Amplify in the project
-    c. Add authentication to the project(automaticaly creates User Pool)   
+    1. Install Amplify CLI
+    2. Init Amplify in the project
+    3. Add authentication to the project(automaticaly creates User Pool)   
 3. Create simple authorization
-    a. Add Amplify to the project
-    b. Add authorization with predefined components
-    c. Add custom authorization
+    1. Add Amplify to the project
+    2. Add authorization with predefined components
+    3. Add custom authorization
 4. Add social Sign-in(Google, Facebook ...)
-    a. Configure providers in Cognito
-    b. Use providers in your app
+    1. Configure providers in Cognito
+    2. Use providers in your app
 5. Issues with Next.js
 
 There are 2 ways to add Amplify to your project. First, you can do it manually through AWS Console. Second, do it using Amplify CLI locally.
@@ -397,7 +397,7 @@ function HomePage(props) {
                 <>
                     <p>You are not signed in.</p>
                     <p>
-                    Click here to <a href="/signin">Sign In</a> or <a href="/signup">Sign Up</a>
+                        Click here to <a href="/signin">Sign In</a> or <a href="/signup">Sign Up</a>
                     </p>
                 </>
             )}
@@ -422,8 +422,36 @@ Detailed instruction for every provider you can find [here](https://docs.amplify
 
 <img width="1018" alt="Screenshot 2023-05-10 at 14 37 07" src="https://github.com/uptechteam/fe-cookbook/assets/26439649/a6958e9c-9b25-4816-a095-3cce63d59bce">
 
-5. Choose the social identity provider you want to enable (e.g., Google, Facebook, or Amazon).
-Follow the instructions provided by the chosen social identity provider to set up the integration and obtain the necessary credentials.
-Enter the required information and save the configuration.
+5. Expose your *aws-exports.js* file
 
-### Use providers in your app
+```js
+// aws-exports.js
+
+const config = {
+    Auth: {
+        region: process.env.REACT_APP_AWS_REGION,
+        userPoolId: process.env.REACT_APP_AWS_POOL_ID,
+        userPoolWebClientId: process.env.REACT_APP_AWS_WEB_CLIENT_ID,
+        identityPoolId: process.env.REACT_APP_AWS_IDENTITY
+        oauth: {
+            domain: process.env.DOMAIN
+            redirectSignIn: process.env.REACT_APP_BASE_URL,
+            redirectSignOut: process.env.REACT_APP_BASE_URL,
+            responseType: "token",
+        }
+    }
+}
+
+export default config;
+```
+
+### Configure providers in your app
+
+1. Run `amplify update auth`.
+2. Select the social identity providers you want to enable and enter the necessary credentials.
+3. Enter redirect sign-in URI and redirect sign-out URI.
+
+> When configuring social identity providers in your AWS Cognito User Pool, you will need to provide the Redirect Sign-in URI and Redirect Sign-out URI for each social provider. These URIs should match the corresponding routes in your application.
+> For example, if your application's sign-in route is **/signin** and your sign-out route is **/signout**, the Redirect Sign-in URI would be **https://your-app-domain.com/signin** and the Redirect Sign-out URI would be **https://your-app-domain.com/signout**.
+    
+4. Run `amplify push`.
