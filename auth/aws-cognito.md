@@ -498,3 +498,94 @@ const SocialSignIn = () => {
 
 export default withAuthenticator(SocialSignIn);
 ```
+
+## Caveats
+
+### Using social sign-in with localhost
+
+Transform your config in *aws-exports.js* file into function
+
+```js
+// aws-exports.js
+
+const getConfig = (isLocalhost) => ({
+    Auth: {
+        region: process.env.REACT_APP_AWS_REGION,
+        userPoolId: process.env.REACT_APP_AWS_POOL_ID,
+        userPoolWebClientId: process.env.REACT_APP_AWS_WEB_CLIENT_ID,
+        identityPoolId: process.env.REACT_APP_AWS_IDENTITY
+        oauth: {
+            domain: process.env.DOMAIN
+            redirectSignIn: isLocalhost
+                ? "http://localhost:3000/signin" 
+                : process.env.REACT_APP_BASE_URL,
+            redirectSignOut: isLocalhost
+                ? "http://localhost:3000/signout" 
+                : process.env.REACT_APP_BASE_URL,
+            responseType: "token",
+        }
+    }
+})
+
+export default config;
+```
+
+Also modify *App.js* file
+```js
+// App.js
+...
+if (typeof window !== "undefined") {
+  isLocalhost = !!(window.location.hostname === "localhost");
+}
+
+Amplify.configure(getAwsConfig(isLocalhost));
+...
+```
+
+### Using with Next.js
+
+Move Amplify configuration to *_app.js*
+
+Example of using:
+
+```js
+// _app.js
+
+...
+let isLocalhost = false;
+
+if (typeof window !== "undefined") {
+  isLocalhost = !!(window.location.hostname === "localhost");
+}
+
+Amplify.configure(getAwsConfig(isLocalhost));
+
+const clientSideEmotionCache = createEmotionCache();
+
+const App: FC<EnhancedAppProps> = (props) => {
+  const { Component, pageProps } = props;
+  const getLayout = Component.getLayout || ((page) => page);
+  const { pathname } = useRouter();
+
+  return (
+    <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <AuthStatusProvider> // returns is user authorized
+          {Object.values(PUBLIC_ROUTES).includes(pathname) ? (
+             <PublicRoute> // if user authorized redirects to internal page
+                 {getLayout(<Component {...pageProps} />)}
+             </PublicRoute>
+             ) : (
+             <ProtectedRoute> // if user unauthorized redirects to login page
+                 {getLayout(<Component {...pageProps} />)}
+             </ProtectedRoute>   
+           )}
+      </AuthStatusProvider>
+    </>
+  );
+};
+
+export default App;
+```
