@@ -560,8 +560,6 @@ if (typeof window !== "undefined") {
 
 Amplify.configure(getAwsConfig(isLocalhost));
 
-const clientSideEmotionCache = createEmotionCache();
-
 const App: FC<EnhancedAppProps> = (props) => {
   const { Component, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);
