@@ -13,9 +13,14 @@
     2. Add authorization with predefined components
     3. Add custom authorization
 4. Add social Sign-in(Google, Facebook ...)
-    1. Configure providers in Cognito
-    2. Use providers in your app
-5. Issues with Next.js
+    1. Setup your auth provider
+    2. Configure providers in Cognito
+    3. Configure providers in your app
+    4. Inform your auth provider of URL
+    5. Add social sign-in to your app
+5. Caveats
+    1. Using social sign-in with localhost
+    2. Using with Next.js
 
 There are 2 ways to add Amplify to your project. First, you can do it manually through AWS Console. Second, do it using Amplify CLI locally.
 Let's look at the first way.
@@ -459,3 +464,37 @@ export default config;
 2. Select the social identity providers you want to enable and enter the necessary credentials.
 3. Enter redirect sign-in URI and redirect sign-out URI.
 4. Run `amplify push`.
+
+### Inform your auth provider of URL
+
+You can find the instruction for every provider [here](https://docs.amplify.aws/lib/auth/social/q/platform/js/#configure-auth-category:~:text=You%20need%20to%20now%20inform%20your%20auth%20provider%20of%20this%20URL%3A)
+
+### Add social sign-in to your app
+
+There is example of using social provider in your app
+
+```js 
+import React from 'react';
+import { Auth } from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react';
+
+const SocialSignIn = () => {
+  const handleGoogleSignIn = () => {
+    Auth.federatedSignIn({ provider: 'Google' });
+  };
+
+  const handleFacebookSignIn = () => {
+    Auth.federatedSignIn({ provider: 'Facebook' });
+  };
+
+  return (
+    <div>
+      <h2>Social Sign-In</h2>
+      <button onClick={handleGoogleSignIn}>Sign In with Google</button>
+      <button onClick={handleFacebookSignIn}>Sign In with Facebook</button>
+    </div>
+  );
+};
+
+export default withAuthenticator(SocialSignIn);
+```
