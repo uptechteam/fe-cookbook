@@ -3,47 +3,24 @@
 1. [Configure User Pool in AWS Console](#configure-user-pool-in-aws-console) 
     1. [Create User Pool in Cognito](#create-user-pool-in-cognito)
     2. [Create identity provider](#create-identity-provider)
-    3. Add credentials to the project
-2. Configure Amplify locally
-    1. Install Amplify CLI
-    2. Init Amplify in the project
-    3. Add authentication to the project(automaticaly creates User Pool)   
-3. Create simple authorization
-    1. Add Amplify to the project
-    2. Add authorization with predefined components
-    3. Add custom authorization
-4. Add social Sign-in(Google, Facebook ...)
-    1. Setup your auth provider
-    2. Configure providers in Cognito
-    3. Configure providers in your app
-    4. Inform your auth provider of URL
-    5. Add social sign-in to your app
-5. Caveats
-    1. Using social sign-in with localhost
-    2. Using with Next.js
-
-
-[Configure User Pool in AWS Console](#configure-user-pool-in-aws-console) 
-    [Create User Pool in Cognito](#create-user-pool-in-cognito)
-    [Create identity provider](#create-identity-provider)
-    [Add credentials to the project](#add-credentials-to-the-project)
-[Configure Amplify locally](#configure-amplify-locally)
-    [Install Amplify CLI](#install-amplify-cli)
-    [Init Amplify in the project](#init-amplify-in-the-project)
-    [Add authentication to the project(automaticaly creates User Pool)](#add-authentication-to-the-project-automaticaly-creates-user-pool)
-[Create simple authorization](#create-simple-authorization)
-    [Add Amplify to the project](#add-amplify-to-the-project)
-    [Add authorization with predefined components](#add-authorization-with-predefined-components)
-    [Add custom authorization](#add-custom-authorization)
-[Add social Sign-in(Google, Facebook ...)](#add-social-sign-in-google-facebook)
-    [Setup your auth provider](#setup-your-auth-provider)
-    [Configure providers in Cognito](#configure-providers-in-cognito)
-    [Configure providers in your app](#configure-providers-in-your-app)
-    [Inform your auth provider of URL](#inform-your-auth-provider-of-url)
-    [Add social sign-in to your app](#add-social-sign-in-to-your-app)
-[Caveats](#caveats)
-    [Using social sign-in with localhost](#using-social-sign-in-with-localhost)
-    [Using with Next.js](#using-with-next-js)
+    3. [Add credentials to the project](#add-credentials-to-the-project)
+2. [Configure Amplify locally](#configure-amplify-locally)
+    1. [Install Amplify CLI](#install-amplify-cli)
+    2. [Init Amplify in the project](#init-amplify-in-the-project)
+    3. [Add authentication to the project(automaticaly creates User Pool)](#add-authentication-to-the-projectautomaticaly-creates-user-pool)
+3. [Create simple authorization](#create-simple-authorization)
+    1. [Add Amplify to the project](#add-amplify-to-the-project)
+    2. [Add authorization with predefined components](#add-authorization-with-predefined-components)
+    3. [Add custom authorization](#add-custom-authorization)
+4. [Add social Sign-in(Google, Facebook ...)](#add-social-sign-ingoogle-facebook-)
+    1. [Setup your auth provider](#setup-your-auth-provider)
+    2. [Configure providers in Cognito](#configure-providers-in-cognito)
+    3. [Configure providers in your app](#configure-providers-in-your-app)
+    4. [Inform your auth provider of URL](#inform-your-auth-provider-of-url)
+    5. [Add social sign-in to your app](#add-social-sign-in-to-your-app)
+5. [Caveats](#caveats)
+    1. [Using social sign-in with localhost](#using-social-sign-in-with-localhost)
+    2. [Using with Next.js](#using-with-nextjs)
 
 There are 2 ways to add Amplify to your project. First, you can do it manually through AWS Console. Second, do it using Amplify CLI locally.
 Let's look at the first way.
