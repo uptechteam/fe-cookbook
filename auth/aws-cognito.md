@@ -1,6 +1,6 @@
 # AWS-Cognito-auth
 
-1. Configure User Pool in AWS Console 
+1. [Configure User Pool in AWS Console](#configure-user-pool-in-aws-console) 
     1. Create User Pool in Cognito
     2. Create identity provider
     3. Add credentials to the project
