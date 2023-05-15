@@ -20,14 +20,6 @@
 
 ## Styled Components
 
-1. Installation
-2. Creating styled components
-4. Styling props
-5. Styling nested components.
-7. Using theme
-8. Reset styles
-9. Using with typescript
-
 #### Installation
 
 To use styled-components in your React project, you first need to install it as a dependency. You can do this using npm or yarn:
