@@ -1,5 +1,17 @@
 # Sentry
 
+## What is it?
+
+Sentry is an open-source error monitoring and crash reporting tool used by developers and organizations to track and debug software errors and exceptions in real-time. It is designed to help developers identify and fix issues in their applications quickly. 
+
+With Sentry, developers can integrate the tool into their applications and collect data on errors, exceptions, and crashes that occur during runtime. When an error or exception is detected, Sentry captures relevant information such as the stack trace, environment variables, and user context, providing valuable insights into the root cause of the issue.
+
+The captured data is then aggregated and displayed in the Sentry dashboard, where developers can view and analyze the errors, track their occurrence frequency, and prioritize them based on their impact. Sentry also provides features such as issue assignment, notifications, and release tracking, enabling teams to collaborate and resolve issues efficiently.
+
+## How to use Sentry in React applications
+
+To use Sentry in a React application, you can follow these general steps:
+
 1. Check out the official guide of creating a new project in Sentry [admin panel](https://docs.sentry.io/product/sentry-basics/integrate-frontend/create-new-project/).
 
 2. Configure [alert rules](https://uptech-team.sentry.io/alerts/rules/) for your project.
