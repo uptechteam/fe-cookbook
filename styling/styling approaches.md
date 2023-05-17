@@ -8,8 +8,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Theming with styled-components](#theming-with-styled-components)     
 &nbsp;&nbsp;&nbsp;&nbsp;[Resetting global styles with styled-components](#resetting-global-styles-with-styled-components)   
 &nbsp;&nbsp;&nbsp;&nbsp;[Using styled-components with TypeScript](#using-styled-components-with-typescript)    
-[MUI](#mui)  
-[SASS](#sass)  
+[MUI](#mui)   
+&nbsp;&nbsp;&nbsp;&nbsp;[Installation](#installation-1)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Basic usage](#basic-usage)   
+&nbsp;&nbsp;&nbsp;&nbsp;[Styling](#styling)   
+&nbsp;&nbsp;&nbsp;&nbsp;[Theming](#theming)   
+[SASS](#sass)   
 [Mixins](#mixins) 
 
 ## General recomedations
@@ -272,6 +276,71 @@ export const theme: Theme = {
 ```
 
 ## MUI
+
+#### Installation
+
+Run `npm install @mui/material @emotion/react @emotion/styled`
+
+or
+
+`yarn add @mui/material @emotion/react @emotion/styled`
+
+#### Basic usage
+
+Import the MUI components you want to use in your React components. For example, to use a button, you can import it like this:
+```js
+import { Button } from '@mui/material';
+
+// Usage
+<Button>Simple button</Button>
+```
+
+#### Styling
+
+* You can pass a style prop to a component to apply custom styles. For example:
+```js
+<Button style={{ backgroundColor: 'blue', color: 'white' }}>Styled Button</Button>
+```
+
+* MUI components come with default styles, which you can override using the sx prop. The sx prop accepts an object containing style properties. For example:
+```js
+<Button sx={{ backgroundColor: 'blue', color: 'white' }}>Styled Button</Button>
+```
+
+* MUI provides the styled function from the @emotion/styled package, allowing you to create custom styles for MUI components. You can define styles and create a custom component using the styled function. For example:
+```js
+import { styled } from '@mui/system';
+
+const StyledButton = styled(Button)({
+  backgroundColor: 'blue',
+  color: 'white',
+});
+
+// Usage
+<StyledButton>Styled Button</StyledButton>
+```
+
+#### Theming
+
+You can create a theme using the createTheme function from @mui/material/styles. For example:
+```js
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ff0000',
+    },
+  },
+});
+
+// Usage
+<ThemeProvider theme={theme}>
+  {/* Your application */}
+</ThemeProvider>
+```
+
+> Information about all available components you can find [here](https://mui.com/)
 
 ## SASS
 
