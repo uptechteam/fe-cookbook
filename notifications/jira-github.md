@@ -6,7 +6,13 @@ To integrate JIRA tickets with pull requests (PRs) in GitHub, you can use the JI
 
   In your GitHub repository, go to the "Settings" tab and select "Integrations & services" (or "Integrations" in newer versions). Look for the JIRA integration and follow the instructions to enable it. You'll need to provide the URL of your JIRA instance and authorize the integration to access the necessary resources.
 
+  Here is an example of addded JIRA integration to the project:
+
   ![Jira integration](https://github.com/uptechteam/fe-cookbook/assets/13544983/0cf7889e-e9bc-485d-9237-cb9ba51dbf96)
+
+  Here is an example of how to add JIRA integration to your project from your current organization:
+
+  ![Jira configuration](https://github.com/uptechteam/fe-cookbook/assets/13544983/212e5e65-dca1-4a4b-ac61-e299c9e1658d)
 
 2. Link JIRA issue keys to GitHub PRs:
   Once the integration is enabled, you can start linking JIRA issues to GitHub PRs. In the body of a PR or a commit message, simply include the JIRA issue key, such as "PROJECT-123." GitHub will recognize the JIRA issue key and automatically link it.
