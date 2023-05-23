@@ -1,5 +1,6 @@
 # Styling approaches
 
+[General recomedations](#general-recomedations)   
 [Styled Components](#styled-components)    
 &nbsp;&nbsp;&nbsp;&nbsp;[Installation](#installation)   
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating styled components](#creating-styled-components)   
@@ -13,8 +14,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Basic usage](#basic-usage)   
 &nbsp;&nbsp;&nbsp;&nbsp;[Styling](#styling)   
 &nbsp;&nbsp;&nbsp;&nbsp;[Theming](#theming)   
-[SASS](#sass)   
-[Mixins](#mixins) 
 
 ## General recomedations
 
@@ -341,7 +340,3 @@ const theme = createTheme({
 ```
 
 > Information about all available components you can find [here](https://mui.com/)
-
-## SASS
-
-## Mixins
