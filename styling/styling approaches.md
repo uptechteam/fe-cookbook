@@ -296,6 +296,8 @@ import { Button } from '@mui/material';
 
 #### Styling
 
+> There are a different ways of styling, but preferrable is using **styled** function.
+
 * You can pass a style prop to a component to apply custom styles. For example:
 ```js
 <Button style={{ backgroundColor: 'blue', color: 'white' }}>Styled Button</Button>
@@ -340,3 +342,9 @@ const theme = createTheme({
 ```
 
 > Information about all available components you can find [here](https://mui.com/)
+
+#### Organizing files structure
+
+Create separate folder called *styles* in *src*
+
+
