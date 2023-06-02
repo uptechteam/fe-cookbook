@@ -345,6 +345,33 @@ const theme = createTheme({
 
 #### Organizing files structure
 
-Create separate folder called *styles* in *src*
-
+1. Create separate folder called *styles* in *src*
+2. Files structure should be similar to the following:
+  ...
+  styles
+    - breakpoints.js
+    - components.js
+    - mixins.js
+    - palette.js
+    - shape.js
+    - typograghy.js
+    - theme.js
+    - index.js 
+    
+ ##### Exaples of files
+ 
+ ```js
+ // breakpoints.js
+ 
+ // use if you need to replace default breakpoints:
+ // xs, extra-small: 0px
+ // sm, small: 600px
+ // md, medium: 900px
+ // lg, large: 1200px
+ // xl, extra-large: 1536px
+ 
+ 
+ ```
+    
+    
 
