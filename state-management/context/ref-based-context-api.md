@@ -22,12 +22,13 @@ Code for this example:
 
   ```
 
-    import React, {
+    import {
       useRef,
       createContext,
       useContext,
       useCallback,
       useSyncExternalStore,
+      ReactNode
     } from "react";
 
     type Store = { first: string; last: string };
@@ -67,7 +68,7 @@ Code for this example:
 
     const StoreContext = createContext<UseStoreDataReturnType | null>(null);
 
-    function Provider({ children }: { children: React.ReactNode }) {
+    function Provider({ children }: { children: ReactNode }) {
       return (
         <StoreContext.Provider value={useStoreData()}>
           {children}
@@ -224,12 +225,13 @@ Our proposed solution is not flexible enough, so in the following example, we us
 
     // createFastContext.tsx
 
-    import React, {
+    import {
       useRef,
       createContext,
       useContext,
       useCallback,
       useSyncExternalStore,
+      ReactNode
     } from "react";
 
     export default function createFastContext<Store>(initialState: Store) {
@@ -265,7 +267,7 @@ Our proposed solution is not flexible enough, so in the following example, we us
 
       const StoreContext = createContext<UseStoreDataReturnType | null>(null);
 
-      function Provider({ children }: { children: React.ReactNode }) {
+      function Provider({ children }: { children: ReactNode }) {
         return (
           <StoreContext.Provider value={useStoreData()}>
             {children}

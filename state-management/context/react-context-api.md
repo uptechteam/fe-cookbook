@@ -25,7 +25,8 @@ Here is an official [documentation](https://react.dev/reference/react/createCont
 
 ## Example of using React Context API
 
-Make sure you configured your browser for showing highlighted components after rerender. Here is an example of how to do it Google Chrome DevTools:
+Make sure you configured your browser for showing highlighted components after rerender. Here is an example of how to do it in Google Chrome DevTools:
+
   ![Highlighting components](https://github.com/uptechteam/fe-cookbook/assets/13544983/5a01dd6a-a69a-44e3-a6ca-e4f8dafd9a58)
 
 In the example below we consider a simple form with a couple of inputs.
@@ -41,7 +42,7 @@ Here is code for this example:
 
   ```
 
-    import React, { useState, createContext, useContext, memo } from "react";
+    import { useState, createContext, useContext, memo } from "react";
 
     function useStoreData() {
       const store = useState({
