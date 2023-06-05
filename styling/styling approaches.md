@@ -348,8 +348,8 @@ const theme = createTheme({
 #### Organizing files structure
 
 1. Create separate folder called *styles* in *src*
-2. Files structure should be similar to the following:
-  ...
+2. Files structure should be similar to the following:    
+  ...      
   styles   
     - breakpoints.js
     - components.js
