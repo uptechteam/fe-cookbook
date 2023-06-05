@@ -443,6 +443,7 @@ const theme = createTheme({
   ...
   
  ```
+ > If you want to use custom colors, [here](https://mui.com/material-ui/customization/palette/#adding-new-colors) is a detailed instruction.
  
  ```js
  // shape.js
