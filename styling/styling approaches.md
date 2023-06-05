@@ -13,7 +13,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Installation](#installation-1)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Basic usage](#basic-usage)   
 &nbsp;&nbsp;&nbsp;&nbsp;[Styling](#styling)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Theming](#theming)   
+&nbsp;&nbsp;&nbsp;&nbsp;[Theming](#theming)     
+&nbsp;&nbsp;&nbsp;&nbsp;[Organizing files structure](#organizing-files-structure)   
+&nbsp;&nbsp;&nbsp;&nbsp;[Example of files](#example-of-files)
 
 ## General recomedations
 
@@ -348,7 +350,7 @@ const theme = createTheme({
 1. Create separate folder called *styles* in *src*
 2. Files structure should be similar to the following:
   ...
-  styles
+  styles   
     - breakpoints.js
     - components.js
     - mixins.js
@@ -356,9 +358,8 @@ const theme = createTheme({
     - shape.js
     - typograghy.js
     - theme.js
-    - index.js 
     
- ##### Exaples of files
+ #### Example of files
  
  ```js
  // breakpoints.js
@@ -370,8 +371,149 @@ const theme = createTheme({
  // lg, large: 1200px
  // xl, extra-large: 1536px
  
+ export const breakpoints = {
+  values: {
+    xs: 0,
+    sm: 576,
+    md: 992,
+    lg: 1200,
+    xl: 1400,
+  },
+ };
+
+ export const getBreakpoint = (value) =>
+  `@media (min-width:${breakpoints.values[value]}px)`;
  
  ```
+ 
+ ```js
+ // components.js
+ 
+ // use to set up base appearance of components
+ 
+ export const components = {
+  MuiCssBaseline: {
+    styleOverrides: {
+    ...
     
+  MuiButtonBase: {
+    styleOverrides: {
+      root: {
+        "&.MuiButton-root": {
+          textTransform: "none",
+          ...
+          
+ ```
+ 
+ ```js
+ // mixins.js
+ 
+ // use if you need to extend default mixins
+ 
+ export const mixins = {
+  toolbar: {
+    minHeight: 50,
+    "@media (min-width: 0px) and (orientation: landscape)": {
+      minHeight: 50,
+    },
+    "@media (min-width: 600px)": {
+      minHeight: 50,
+    },
+  },
+ };
+ ```
+ 
+ ```js
+ // palette.js
+ 
+ // use to define colors set
+ 
+ export const palette = {
+  common: {
+    white: "#fff",
+    black: "#000",
+  },
+  primary: {
+    main: "#41479B",
+    dark: "#333",
+  },
+  secondary: {
+    main: "#44756B",
+  },
+  ...
+  
+ ```
+ 
+ ```js
+ // shape.js
+ 
+ // use if you want to define borderRadius
+ 
+ export const shape = {
+  borderRadius: 8,
+};
+ ```
+ 
+ ```js
+ // typography.js
+ 
+ // use to define typography for different variants
+ 
+ const h1 = {
+  fontWeight: 600,
+  fontSize: "28px",
+  lineHeight: "35px",
+};
+
+const h2 = {
+  fontWeight: 600,
+  fontSize: "24px",
+  lineHeight: "34px",
+};
+
+...
+
+export const fontSizes = {
+  h1,
+  h2,
+  ...
+};
+
+export const typography = {
+  ...fontSizes,
+  // general properties applied to all variants
+  fontFamily: "Arial, sans-serif",
+  fontWeightRegular: 400,
+  fontWeightMedium: 600,
+  fontWeightBold: 700,
+  fontSize: 13,
+};
+ ```
+ 
+ ```js
+ // theme.js
+ 
+ // use to create theme and unite all features defined above
+ 
+  import { createTheme } from "@mui/material/styles";
+  import { palette } from "./palette";
+  import { shape } from "./shape";
+  import { breakpoints } from "./breakpoints";
+  import { typography } from "./typography";
+  import { components } from "./components";
+  import { mixins } from "./mixins";
+
+  const theme = createTheme({
+    palette,
+    spacing: 4, // uses for defining coeficient of spacing
+    shape,
+    breakpoints,
+    typography,
+    components,
+    mixins,
+  });
+
+  export default theme;
+ ```
     
 
