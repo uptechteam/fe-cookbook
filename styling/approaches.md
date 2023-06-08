@@ -25,17 +25,15 @@
 
 ## Styled Components
 
-#### Installation
+Official docs you can find [here](https://styled-components.com/docs).
 
-To use styled-components in your React project, you first need to install it as a dependency. You can do this using npm or yarn:
+### Installation
 
-`npm install styled-components`
+To use styled-components in your React project, you first need to install it as a dependency.
 
-or
+Run `pnpm install styled-components`.
 
-`yarn add styled-components`
-
-#### Creating styled components
+### Creating styled components
 
 To create a styled component, you can use the styled function that comes with styled-components. Here's an example:
 
@@ -58,7 +56,7 @@ const Button = styled.button`
 `;
 ```
 
-#### Styling props
+### Styling props
 
 Styled-components allows you to pass props to your styled components and use them to conditionally style the component. Here's an example:
 
@@ -84,7 +82,7 @@ const Button = styled.button`
 `;
 ```
 
-#### Styling nested components
+### Styling nested components
 
 Styled-components allows you to style nested components within your styled component. Here's an example:
 
@@ -109,7 +107,7 @@ const Container = styled.div`
 `;
 ```
 
-#### Theming with styled-components
+### Theming with styled-components
 
 Styled-components allows you to use themes to create consistent styling across your application. A theme is simply an object that contains the values you want to use for your styles.
 
@@ -165,7 +163,7 @@ const App = () => {
 export default App;
 ```
 
-#### Resetting global styles with styled-components
+### Resetting global styles with styled-components
 
 styled-components provides a way to reset global styles using the createGlobalStyle function. This function allows you to define CSS rules that will be applied globally to your application, similar to the way that a CSS reset stylesheet would work.
 
@@ -209,7 +207,7 @@ const App = () => {
 export default App;
 ```
 
-#### Using styled-components with TypeScript
+### Using styled-components with TypeScript
 
 To use styled-components with TypeScript, you will need to install the @types/styled-components package, which provides type definitions for the library.
 
@@ -278,15 +276,11 @@ export const theme: Theme = {
 
 ## MUI
 
-#### Installation
+### Installation
 
-Run `npm install @mui/material @emotion/react @emotion/styled`
+Run `pnpm install @mui/material @emotion/react @emotion/styled`.
 
-or
-
-`yarn add @mui/material @emotion/react @emotion/styled`
-
-#### Basic usage
+### Basic usage
 
 Import the MUI components you want to use in your React components. For example, to use a button, you can import it like this:
 ```js
@@ -296,7 +290,7 @@ import { Button } from '@mui/material';
 <Button>Simple button</Button>
 ```
 
-#### Styling
+### Styling
 
 > There are a different ways of styling, but preferrable is using **styled** function.
 
@@ -323,7 +317,7 @@ const StyledButton = styled(Button)({
 <StyledButton>Styled Button</StyledButton>
 ```
 
-#### Theming
+### Theming
 
 You can create a theme using the createTheme function from @mui/material/styles. For example:
 ```js
@@ -345,7 +339,7 @@ const theme = createTheme({
 
 > Information about all available components you can find [here](https://mui.com/)
 
-#### Organizing files structure
+### Organizing files structure
 
 1. Create separate folder called *styles* in *src*
 2. Files structure should be similar to the following:    
@@ -359,7 +353,7 @@ const theme = createTheme({
     - typograghy.js
     - theme.js
     
- #### Example of files
+ ### Example of files
  
  ```js
  // breakpoints.js
