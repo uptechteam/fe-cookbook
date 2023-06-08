@@ -11,15 +11,17 @@
 
 Official docs you can find [here](https://styled-components.com/docs).
 
+> **Note:** there are a lot of hardcoded values for styles(colors, font sizes, etc.). This was made to avoid redundant code in examples. Please, use these variables from `theme` object in real project.
+
 ## Installation
 
-To use styled-components in your React project, you first need to install it as a dependency.
+To use `styled-components` in your React project, you first need to install it as a dependency.
 
 Run `pnpm install styled-components`.
 
 ## Creating styled components
 
-To create a styled component, you can use the styled function that comes with styled-components. Here's an example:
+To create a styled component, you can use the styled function that comes with `styled-components`. Here's an example:
 
 ```js
 // styles.js
@@ -42,7 +44,7 @@ const Button = styled.button`
 
 ## Styling props
 
-Styled-components allows you to pass props to your styled components and use them to conditionally style the component. Here's an example:
+`Styled-components` allows you to pass props to your styled components and use them to conditionally style the component. Here's an example:
 
 ```js
 // styles.js
@@ -68,7 +70,9 @@ const Button = styled.button`
 
 ## Styling nested components
 
-Styled-components allows you to style nested components within your styled component. Here's an example:
+> **Note:** Don't use deep nesting(more than one level of nesting)!
+
+`Styled-components` allows you to style nested components within your styled component. Here's an example:
 
 ```js
 // styles.js
@@ -93,7 +97,7 @@ const Container = styled.div`
 
 ## Theming with styled-components
 
-Styled-components allows you to use themes to create consistent styling across your application. A theme is simply an object that contains the values you want to use for your styles.
+`Styled-components` allows you to use themes to create consistent styling across your application. A theme is simply an object that contains the values you want to use for your styles.
 
 To use a theme in your application, you first need to create a theme object. Here's an example:
 
@@ -115,7 +119,7 @@ const theme = {
 };
 ```
 
-To use this theme in your styled components, you can pass it to the ThemeProvider component from styled-components. Here's an example:
+To use this theme in your styled components, you can pass it to the `ThemeProvider` component from `styled-components`. Here's an example:
 
 ```js
 // App.js
@@ -147,11 +151,24 @@ const App = () => {
 export default App;
 ```
 
-## Resetting global styles with styled-components
+## Resetting and normalizing global styles
 
-styled-components provides a way to reset global styles using the createGlobalStyle function. This function allows you to define CSS rules that will be applied globally to your application, similar to the way that a CSS reset stylesheet would work.
+`normalize.css` is a small CSS file that aims to make the default styles consistent across different browsers. It applies a set of CSS rules that reset or normalize the default styles of HTML elements, ensuring a more consistent baseline appearance for web pages.
 
-To create a global style component, you can use the createGlobalStyle function and define your CSS rules as you would in a regular CSS stylesheet. Here's an example:
+To add normalize.css to a React project, you can follow these steps:
+
+1. Run `pnpm install normalize.css`
+2. Import `normalize.css` in your project
+
+```js
+// App.js or index.js
+
+import "normalize.css";
+```
+
+`Styled-components` provides a way to reset global styles using the `createGlobalStyle` function. This function allows you to define CSS rules that will be applied globally to your application, similar to the way that a CSS reset stylesheet would work.
+
+To create a global style component, you can use the `createGlobalStyle` function and define your CSS rules as you would in a regular CSS stylesheet. Here's an example:
 
 ```js
 import { createGlobalStyle } from 'styled-components';
@@ -169,7 +186,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 ```
 
-Once you have defined your GlobalStyle component, you can render it inside your app component:
+Once you have defined your `GlobalStyle` component, you can render it inside your app component:
 
 ```js
 // App.js
@@ -178,6 +195,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyle';
 import { theme } from './theme';
+import "normalize.css";
 
 const App = () => {
   return (
@@ -193,9 +211,9 @@ export default App;
 
 ## Using styled-components with TypeScript
 
-To use styled-components with TypeScript, you will need to install the @types/styled-components package, which provides type definitions for the library.
+To use `styled-components` with TypeScript, you will need to install the `@types/styled-components` package, which provides type definitions for the library.
 
-`npm install styled-components @types/styled-components`
+`pnpm install styled-components @types/styled-components`
 
 Once you have installed the necessary packages, you can create your styled components like this:
 
