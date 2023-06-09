@@ -308,6 +308,57 @@ export const theme: Theme = {
 };
 ```
 
+## Using css function and mixins
+
+When you should use it:
+
+1. When applying styles based on props.
+2. When working with theme variables.
+3. For generating complex or dynamic styles.
+4. When defining global styles using createGlobalStyle.
+5. For reusing styles using mixins.
+
+Examples:
+
+```js
+import styled, { css } from 'styled-components';
+
+// Using global styles
+const GlobalStyles = createGlobalStyle`
+  ${css`
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: ${props => props.theme.backgroundColor};
+    }
+    
+    a {
+      color: ${props => props.theme.linkColor};
+      text-decoration: none;
+    }
+  `}
+`;
+
+// Simple component
+const Button = styled.button`
+  ${props => css`
+    background-color: ${props.primary ? 'blue' : 'gray'};
+    color: ${props.primary ? 'white' : 'black'};
+  `}
+`;
+
+// Mixin
+const ellipsisMixin = css`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+const Title = styled.h1`
+  ${ellipsisMixin}
+  font-size: 24px;
+`;
+```
+
 ## Best practices for naming styled-components
 
 - Use descriptive and meaningful names for styled components.
