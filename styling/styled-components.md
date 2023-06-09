@@ -7,7 +7,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Styling nested components](#styling-nested-components)   
 &nbsp;&nbsp;&nbsp;&nbsp;[Theming with styled-components](#theming-with-styled-components)     
 &nbsp;&nbsp;&nbsp;&nbsp;[Resetting global styles with styled-components](#resetting-global-styles-with-styled-components)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Using styled-components with TypeScript](#using-styled-components-with-typescript)
+&nbsp;&nbsp;&nbsp;&nbsp;[Using styled-components with TypeScript](#using-styled-components-with-typescript)    
+&nbsp;&nbsp;&nbsp;&nbsp;[Best practices for naming styled-components](#best-practices-for-naming-styled-components)    
 
 Official docs you can find [here](https://styled-components.com/docs).
 
@@ -99,7 +100,9 @@ const Container = styled.div`
 
 `Styled-components` allows you to use themes to create consistent styling across your application. A theme is simply an object that contains the values you want to use for your styles.
 
-To use a theme in your application, you first need to create a theme object. Here's an example:
+You can configure theme structure as you want and expand existing themes.
+
+To use a theme in your application, you first need to create a theme object. Here are examples:
 
 ```js
 // theme.js
@@ -116,6 +119,35 @@ const theme = {
     medium: '16px',
     large: '18px',
   },
+};
+```
+
+```js
+// theme.js
+
+import { defaultTheme } from '@styles/defaultTheme';
+
+const theme = {
+    ...defaultTheme,
+    typography: {
+        fontFamily: 'Montserrat, Arial, sans-serif',
+        fontSize: '16px',
+        heading: {
+            fontSize: '28px',
+            fontWeight: '600',
+        },
+        // ... other typography styles
+    },
+    spacing: {
+        unit: 10,
+        padding: {
+            small: '10px',
+            medium: '20px',
+            large: '30px',
+        },
+        // ... other spacing values
+    },
+    // ... other theme properties
 };
 ```
 
@@ -275,3 +307,12 @@ export const theme: Theme = {
   },
 };
 ```
+
+## Best practices for naming styled-components
+
+- Use descriptive and meaningful names for styled components.
+- Avoid generic or ambiguous names.
+- Follow a consistent naming convention.
+- Consider the component's role or hierarchy in the name.
+- Keep names concise and readable.
+- Avoid namespace collisions.
