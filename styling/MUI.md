@@ -75,7 +75,7 @@ const theme = createTheme({
 
 1. Create separate folder called *styles* in *src*
 2. Files structure should be similar to the following:    
-   <img src="" alt="files structure"/>
+   <img width="204" alt="Screenshot 2023-06-19 at 17 35 50" src="https://github.com/uptechteam/fe-cookbook/assets/26439649/d951a5f9-5dab-4e21-a616-1ac938850230">
 
 ## Example of files
 
