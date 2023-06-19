@@ -1,14 +1,15 @@
 # Styled Components
-
-[Styled Components](#styled-components)    
-&nbsp;&nbsp;&nbsp;&nbsp;[Installation](#installation)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Creating styled components](#creating-styled-components)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Styling props](#styling-props)    
-&nbsp;&nbsp;&nbsp;&nbsp;[Styling nested components](#styling-nested-components)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Theming with styled-components](#theming-with-styled-components)     
-&nbsp;&nbsp;&nbsp;&nbsp;[Resetting global styles with styled-components](#resetting-global-styles-with-styled-components)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Using styled-components with TypeScript](#using-styled-components-with-typescript)    
-&nbsp;&nbsp;&nbsp;&nbsp;[Best practices for naming styled-components](#best-practices-for-naming-styled-components)    
+ 
+[Installation](#installation)   
+[Creating styled components](#creating-styled-components)   
+[Styling props](#styling-props)    
+[Styling nested components](#styling-nested-components)   
+[Theming with styled-components](#theming-with-styled-components)     
+[Resetting global styles with styled-components](#resetting-global-styles-with-styled-components)   
+[Using styled-components with TypeScript](#using-styled-components-with-typescript)    
+[Using css function and mixins](#using-css-function-and-mixins)    
+[Best practices for naming styled-components](#best-practices-for-naming-styled-components)   
+[Best practices and edge cases](#best-practices-and-edge-cases)
 
 Official docs you can find [here](https://styled-components.com/docs).
 
@@ -367,3 +368,22 @@ const Title = styled.h1`
 - Consider the component's role or hierarchy in the name.
 - Keep names concise and readable.
 - Avoid namespace collisions.
+
+## Best practices and edge cases
+
+1. Keep styled components in separate file called `styles.js` near the component.
+![](../../../../../var/folders/34/7vbf5tfs3713z2nb8gkh1sn40000gp/T/TemporaryItems/NSIRD_screencaptureui_lIoJcD/Screenshot 2023-06-19 at 16.13.19.png)
+2. Don't duplicate styles, use `css` function to avoid duplication. Read more [here](#using-css-function-and-mixins).
+3. If you want to share styled component across multiple components keep them in a more top-level folder where it can be imported by more than one component folder.
+4. You semantic tags through styling.
+5. Using dynamic props, keep the parameter name either short or destructuring it right away.
+    ```js
+    const Headline = styled.h1`
+      color: ${(p) => p.color};
+    `;
+    
+    const Text = styled.span`
+      padding: ${({ padding }) => padding}px;
+    `;
+    ```
+6. Avoid using `!important` in stylesheets. If you do need to use !important in a style sheet, make sure that it is only used sparingly and only when absolutely necessary.
