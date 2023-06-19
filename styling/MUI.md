@@ -1,12 +1,12 @@
 # MUI
-
-[MUI](#mui)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Installation](#installation)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Basic usage](#basic-usage)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Styling](#styling)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Theming](#theming)     
-&nbsp;&nbsp;&nbsp;&nbsp;[Organizing files structure](#organizing-files-structure)   
-&nbsp;&nbsp;&nbsp;&nbsp;[Example of files](#example-of-files)
+ 
+[Installation](#installation)  
+[Basic usage](#basic-usage)   
+[Styling](#styling)   
+[Theming](#theming)     
+[Organizing files structure](#organizing-files-structure)   
+[Example of files](#example-of-files)   
+[Using MUI with TypeScript](#using-mui-with-typescript)
 
 ## Installation
 
@@ -24,7 +24,7 @@ import { Button } from '@mui/material';
 
 ## Styling
 
-> There are a different ways of styling, but preferrable is using **styled** function.
+> **Note:** Inline styles only for the synopsis, use only `styled` function in your project.
 
 * You can pass a style prop to a component to apply custom styles. For example:
 ```js
@@ -75,15 +75,7 @@ const theme = createTheme({
 
 1. Create separate folder called *styles* in *src*
 2. Files structure should be similar to the following:    
-   ...      
-   styles
-    - breakpoints.js
-    - components.js
-    - mixins.js
-    - palette.js
-    - shape.js
-    - typograghy.js
-    - theme.js
+   <img src="" alt="files structure"/>
 
 ## Example of files
 
@@ -242,5 +234,74 @@ export const typography = {
 
   export default theme;
  ```
-    
 
+## Using MUI with TypeScript
+
+* If you need to pass custom props to MUI components, you can create an interface that extends the original component's props and use it in your component. For example:
+
+```ts
+import { TextField, TextFieldProps } from '@mui/material';
+
+interface MyTextFieldProps extends TextFieldProps {
+  // Custom props
+  placeholderText: string;
+}
+
+const MyTextField: React.FC<MyTextFieldProps> = ({ placeholderText, ...rest }) =>
+  <TextField placeholder={placeholderText} {...rest} />;
+```
+
+* If you're using `styled` function with dynamic props, you need to define additional props. For example:
+
+```ts
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+
+interface IButtonProps {
+  isActive: boolean;
+}
+
+const ButtonStyled = styled(Button)<IButtonProps>(({ theme, isActive }) => ({
+   color: isActive ? theme.palette.green : theme.palette.grey
+}))
+```
+
+* If you need to expand default theme options you need to declare them in `theme.ts` file. For example:
+
+```ts
+// theme.ts
+
+interface Palette {
+   others: {
+      completed: CSSProperties["color"];
+      completedStroke: CSSProperties["color"];
+      draft: CSSProperties["color"];
+      draftStroke: CSSProperties["color"];
+      processing: CSSProperties["color"];
+   }
+}
+
+interface PaletteOptions {
+   others: {
+      completed: CSSProperties["color"];
+      completedStroke: CSSProperties["color"];
+      draft: CSSProperties["color"];
+      draftStroke: CSSProperties["color"];
+      processing: CSSProperties["color"];
+   }
+}
+
+interface PaletteColorOptions {
+   main: CSSProperties["color"];
+   light?: CSSProperties["color"];
+   dark?: CSSProperties["color"];
+   contrastText?: CSSProperties["color"];
+   secondary?: CSSProperties["color"];
+}
+
+export const theme = createTheme({
+   // your theme config
+});
+```
+
+> More detailed instruction you can find [here](#https://mui.com/material-ui/guides/typescript/).
