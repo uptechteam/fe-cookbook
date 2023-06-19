@@ -372,7 +372,7 @@ const Title = styled.h1`
 ## Best practices and edge cases
 
 1. Keep styled components in separate file called `styles.js` near the component.
-![](../../../../../var/folders/34/7vbf5tfs3713z2nb8gkh1sn40000gp/T/TemporaryItems/NSIRD_screencaptureui_lIoJcD/Screenshot 2023-06-19 at 16.13.19.png)
+<img width="171" alt="Screenshot 2023-06-19 at 17 23 06" src="https://github.com/uptechteam/fe-cookbook/assets/26439649/7c6e3922-03a6-4294-bd0e-7bdd8b85041d">
 2. Don't duplicate styles, use `css` function to avoid duplication. Read more [here](#using-css-function-and-mixins).
 3. If you want to share styled component across multiple components keep them in a more top-level folder where it can be imported by more than one component folder.
 4. You semantic tags through styling.
