@@ -1,26 +1,28 @@
 # AWS-Cognito-auth
 
-1. [Configure User Pool in AWS Console](#configure-user-pool-in-aws-console) 
-    1. [Create User Pool in Cognito](#create-user-pool-in-cognito)
-    2. [Create identity provider](#create-identity-provider)
-    3. [Add credentials to the project](#add-credentials-to-the-project)
-2. [Configure Amplify locally](#configure-amplify-locally)
-    1. [Install Amplify CLI](#install-amplify-cli)
-    2. [Init Amplify in the project](#init-amplify-in-the-project)
-    3. [Add authentication to the project(automaticaly creates User Pool)](#add-authentication-to-the-projectautomaticaly-creates-user-pool)
-3. [Create simple authorization](#create-simple-authorization)
-    1. [Add Amplify to the project](#add-amplify-to-the-project)
-    2. [Add authorization with predefined components](#add-authorization-with-predefined-components)
-    3. [Add custom authorization](#add-custom-authorization)
-4. [Add social Sign-in(Google, Facebook ...)](#add-social-sign-ingoogle-facebook-)
-    1. [Setup your auth provider](#setup-your-auth-provider)
-    2. [Configure providers in Cognito](#configure-providers-in-cognito)
-    3. [Configure providers in your app](#configure-providers-in-your-app)
-    4. [Inform your auth provider of URL](#inform-your-auth-provider-of-url)
-    5. [Add social sign-in to your app](#add-social-sign-in-to-your-app)
-5. [Caveats](#caveats)
-    1. [Using social sign-in with localhost](#using-social-sign-in-with-localhost)
-    2. [Using with Next.js](#using-with-nextjs)
+- [AWS-Cognito-auth](#aws-cognito-auth)
+  - [Configure User Pool in AWS Console](#configure-user-pool-in-aws-console)
+    - [Create User Pool in Cognito](#create-user-pool-in-cognito)
+    - [Create identity provider](#create-identity-provider)
+    - [Add credentials to the project](#add-credentials-to-the-project)
+  - [Configure Amplify locally](#configure-amplify-locally)
+    - [Install Amplify CLI](#install-amplify-cli)
+    - [Init Amplify in the project](#init-amplify-in-the-project)
+    - [Add authentication to the project(automaticaly creates User Pool)](#add-authentication-to-the-projectautomaticaly-creates-user-pool)
+  - [Create simple authorization](#create-simple-authorization)
+    - [Add Amplify to the project](#add-amplify-to-the-project)
+    - [Importing existing user pools](#importing-existing-user-pools)
+    - [Add authorization with predefined components](#add-authorization-with-predefined-components)
+    - [Add custom authorization](#add-custom-authorization)
+  - [Add social Sign-in(Google, Facebook ...)](#add-social-sign-ingoogle-facebook-)
+    - [Setup your auth provider](#setup-your-auth-provider)
+    - [Configure providers in Cognito](#configure-providers-in-cognito)
+    - [Configure providers in your app](#configure-providers-in-your-app)
+    - [Inform your auth provider of URL](#inform-your-auth-provider-of-url)
+    - [Add social sign-in to your app](#add-social-sign-in-to-your-app)
+  - [Caveats](#caveats)
+    - [Using social sign-in with localhost](#using-social-sign-in-with-localhost)
+    - [Using with Next.js](#using-with-nextjs)
 
 There are 2 ways to add Amplify to your project. First, you can do it manually through AWS Console. Second, do it using Amplify CLI locally.
 Let's look at the first way.
@@ -108,10 +110,17 @@ Choose authentication flow.
 Create *.env* file
 ```js
 // .env
+// For create-react-app:
 REACT_APP_AWS_REGION=XX-XXXX-X
 REACT_APP_AWS_POOL_ID=XX-XXXX-X_abcd1234
 REACT_APP_AWS_WEB_CLIENT_ID=a1b2c3d4e5f6g7h8i9j0k1l2m3
 REACT_APP_AWS_IDENTITY=XX-XXXX-X:XXXXXXXX-XXXX-1234-abcd-1234567890ab
+
+// For vite.js:
+VITE_AWS_REGION=XX-XXXX-X
+VITE_AWS_POOL_ID=XX-XXXX-X_abcd1234
+VITE_AWS_WEB_CLIENT_ID=a1b2c3d4e5f6g7h8i9j0k1l2m3
+VITE_AWS_IDENTITY=XX-XXXX-X:XXXXXXXX-XXXX-1234-abcd-1234567890ab
 ```
 
 Create file *aws-exports.js*
@@ -165,6 +174,32 @@ import awsConfig from "./aws-exports";
 
 Amplify.configure(awsConfig);
 ```
+
+### Importing existing user pools
+
+Import existing Amazon Cognito resources into your Amplify project. Get started by running amplify import auth command to search for & import an existing Cognito User Pool & Identity Pool in your account.
+
+```js
+amplify import auth
+```
+
+The amplify import auth command will:
+
+- automatically populate your Amplify Library configuration files (aws-exports.js, amplifyconfiguration.json) with your chosen Amazon Cognito resource information;
+- provide your designated existing Cognito resource as the authentication & authorization mechanism for all auth-dependent categories (API, Storage and more);
+- enable Lambda functions to access the chosen Cognito resource if you permit it
+Make sure to run `amplify push` to complete the import process and deploy this backend change to the cloud.
+
+This feature is particularly useful if you're trying to:
+
+- enable Amplify categories (such as API, Storage, and function) for your existing user base;
+- incrementally adopt Amplify for your application stack;
+- independently manage Cognito resources while working with Amplify.
+
+*!!!Important!!!*
+Pay attention to the autogenerated `amplify` folder. You don't need to store it in your project or just add it to the .gitignore file as it has sensitive data.
+
+More info you can find [here](https://docs.amplify.aws/cli/auth/import/).
 
 ### Add authorization with predefined components
 
@@ -412,6 +447,7 @@ function HomePage(props) {
 
 export default CustomAuthenticator;
 ```
+
 ## Add social Sign-in(Google, Facebook ...)
 
 ### Setup your auth provider
