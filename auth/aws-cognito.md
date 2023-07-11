@@ -5,6 +5,7 @@
     - [Create User Pool in Cognito](#create-user-pool-in-cognito)
     - [Create identity provider](#create-identity-provider)
     - [Add credentials to the project](#add-credentials-to-the-project)
+    - [Adding env variables to the project in GitHub (if you use GitHub Actions)](#adding-env-variables-to-the-project-in-github-if-you-use-github-actions)
   - [Configure Amplify locally](#configure-amplify-locally)
     - [Install Amplify CLI](#install-amplify-cli)
     - [Init Amplify in the project](#init-amplify-in-the-project)
@@ -23,6 +24,7 @@
   - [Caveats](#caveats)
     - [Using social sign-in with localhost](#using-social-sign-in-with-localhost)
     - [Using with Next.js](#using-with-nextjs)
+  - [Handling logic for using access and refresh tokens](#handling-logic-for-using-access-and-refresh-tokens)
 
 There are 2 ways to add Amplify to your project. First, you can do it manually through AWS Console. Second, do it using Amplify CLI locally.
 Let's look at the first way.
@@ -138,6 +140,11 @@ const config = {
 
 export default config;
 ```
+
+### Adding env variables to the project in GitHub (if you use GitHub Actions)
+
+  ![Env variables adding](https://github.com/uptechteam/prism-athlete-fe/assets/13544983/91eefbe8-6a47-490b-b949-0f618215172f)
+
 
 ## Configure Amplify locally
 
@@ -622,4 +629,105 @@ const App: FC<EnhancedAppProps> = (props) => {
 };
 
 export default App;
+```
+
+## Handling logic for using access and refresh tokens
+Here is an example of the `axiosInstance.ts` file with the default configuration for axios.
+
+```typescript
+// parseServerException.ts
+import axios, { AxiosError } from 'axios';
+
+export const parseServerException = (e: Error | AxiosError): string => {
+  let errorMessage = '';
+
+  if (!axios.isAxiosError(e)) {
+    errorMessage = e.message;
+  } else {
+    const responseData = e.response?.data;
+    errorMessage =
+      !e.response || !responseData ? e.message : responseData.error?.message;
+  }
+
+  return errorMessage;
+};
+
+// displayToast.tsx
+
+import { toast } from 'react-toastify';
+
+export const displayToastError = (title: string) => {
+  toast.error(title);
+};
+
+
+// axiosInstance.ts
+
+import { Auth } from 'aws-amplify';
+import axios, { AxiosRequestHeaders } from 'axios';
+
+import { displayToastError } from './displayToast';
+import { parseServerException } from './parseServerException';
+
+export const Axios = axios.create({
+  baseURL: `${import.meta.env.VITE_API_URL}`,
+});
+
+Axios.defaults.headers.common['Content-Type'] = 'application/json';
+
+Axios.interceptors.request.use(
+  (config) =>
+    new Promise((resolve) => {
+      Auth.currentSession()
+        .then((session) => {
+          const idTokenExpire = session.getIdToken().getExpiration();
+          const refreshToken = session.getRefreshToken();
+          const currentTimeSeconds = Math.round(+new Date() / 1000);
+          const accessToken = `Bearer ${session
+            .getAccessToken()
+            .getJwtToken()}`;
+          if (idTokenExpire < currentTimeSeconds) {
+            Auth.currentAuthenticatedUser().then((res) => {
+              res.refreshSession(refreshToken, (err: Error) => {
+                if (err) {
+                  Auth.signOut();
+                } else {
+                  if (!config.headers) {
+                    config.headers = {} as AxiosRequestHeaders;
+                  }
+                  config.headers.Authorization = accessToken;
+                  resolve(config);
+                }
+              });
+            });
+          } else {
+            if (!config.headers) {
+              config.headers = {} as AxiosRequestHeaders;
+            }
+            config.headers.Authorization = accessToken;
+            resolve(config);
+          }
+        })
+        .catch(() => {
+          // No logged-in user: don't set auth header
+          resolve(config);
+        });
+    })
+);
+
+Axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response.status === 401) {
+      Auth.signOut();
+    }
+
+    const errorMessage = parseServerException(error);
+
+    displayToastError(errorMessage);
+
+    return Promise.reject(error);
+  }
+);
+
 ```
