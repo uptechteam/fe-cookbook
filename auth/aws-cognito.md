@@ -143,8 +143,9 @@ export default config;
 
 ### Adding env variables to the project in GitHub (if you use GitHub Actions)
 
-  ![Env variables adding](https://github.com/uptechteam/prism-athlete-fe/assets/13544983/91eefbe8-6a47-490b-b949-0f618215172f)
-
+  ![Existing env variables](https://github.com/uptechteam/prism-athlete-fe/assets/13544983/91eefbe8-6a47-490b-b949-0f618215172f)
+  
+  ![Env variables adding](https://github.com/uptechteam/prism-athlete-fe/assets/13544983/727c4a11-11fe-450f-bf75-dd0f120b10d5)
 
 ## Configure Amplify locally
 
