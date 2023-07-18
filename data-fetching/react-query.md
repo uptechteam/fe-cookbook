@@ -47,7 +47,7 @@ Pros:
 
 6. Extensibility: React Query is designed to be extensible, allowing you to customize its behavior and integrate with other libraries or data sources. You can create custom hooks, modify query configurations, or add plugins to extend its capabilities.
 
-Cons: 
+Cons:
 
 1. Learning Curve: While React Query simplifies many aspects of data fetching, it still requires some initial learning and understanding of its concepts and API. It may take some time for developers who are new to the library to become proficient in using it effectively.
 
