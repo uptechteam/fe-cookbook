@@ -2,6 +2,7 @@
 # SWR
 
 * [General information](#general-information)
+* [Pros and cons](#pros-and-cons)
 * [Getting started](#getting-started)
 * [Global configuration](#global-configuration)
 * [Cache](#cache)
@@ -26,6 +27,24 @@ SWR is often used in conjunction with React, but it can be used with other JavaS
 
  ---
 
+## Pros and cons
+
+Pros:
+
+1. Improved Performance: SWR optimizes network requests by providing caching and automatic data revalidation. It reduces the number of unnecessary network requests, improves response times, and enhances overall application performance.
+2. Real-Time Data: SWR is well-suited for working with real-time data or frequently changing data. It supports automatic polling, allowing you to keep the data up-to-date without manual intervention. This is especially useful for applications that require real-time updates, such as chat applications, live dashboards, or collaborative tools.
+3. Simplified Data Fetching: SWR simplifies the process of fetching and managing data in web applications. It provides a simple and intuitive API, making it easier to handle data fetching, caching, and error handling. The use of the useSWR hook and the built-in caching mechanism reduces the amount of boilerplate code needed for data fetching.
+4. Better User Experience: By leveraging caching and background revalidation, SWR provides a smoother user experience. It allows you to display data immediately from the cache while fetching the latest updates in the background. This reduces perceived latency and provides a more responsive interface for users.
+5. Integration with React Ecosystem: SWR integrates well with React and other JavaScript frameworks, making it a convenient choice for developers working with these technologies. It provides hooks-based API, allowing seamless integration with React components and state management libraries like Redux or MobX.
+
+Cons:
+
+1. Learning Curve: While SWR simplifies data fetching and caching, there is still a learning curve associated with understanding its concepts and API. Developers need to spend some time familiarizing themselves with SWR and its options to make the most of its features.
+2. Limited to Client-Side Caching: SWR primarily focuses on client-side caching, which means the cached data is stored in the browser's memory. This can be a limitation if you require server-side caching or need to share cached data across different users or sessions.
+3. Overhead for Complex Scenarios: While SWR is great for many use cases, it may introduce some complexity for more advanced scenarios or when dealing with complex data dependencies. Customizing cache behavior or handling complex data relationships may require additional effort and careful consideration.
+
+ ---
+
 ## Getting Started
 
 Inside your React project directory, run the following:
@@ -39,6 +58,7 @@ For normal RESTful APIs with JSON data, first you need to create a `fetcher` fun
 ```javascript
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 ```
+
 If you want to use GraphQL API or libs like Axios, you can create your own fetcher function. Check [here](https://swr.vercel.app/docs/data-fetching) for more examples.
 
 Here is an example of using the `fetcher` function with Axios:
