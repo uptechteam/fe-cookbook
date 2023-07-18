@@ -161,6 +161,8 @@ Here is another example of using cache updating when we update information about
 
 ```javascript
 
+import merge from "lodash.merge";
+
 const updateUser = (resultData, userId) =>
   Axios.patch(`users/${userId}`, resultData);
 
@@ -194,6 +196,8 @@ const UserPage = () => {
   );
 };
 ```
+
+In the example above we don't need to refetch the user data from the server. We can just update cache and use cached user data in this component.
 
  ---
  
