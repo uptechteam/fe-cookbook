@@ -26,6 +26,8 @@ Pros:
 
 5. **Automatic request and response transformation**: Axios can automatically transform request and response data. For example, it can parse JSON responses into JavaScript objects or convert request payloads into different formats like JSON, FormData, or URL-encoded data.
 
+6. **Testing**: It's easy to mock, there are a lot of libraries to mock and use mocks with the tests
+
 Cons:
 
 1. **Size**: Axios is a relatively small library, but it does add some overhead to your project's size. If you're working on a performance-sensitive application where minimizing bundle size is crucial, you may consider using a smaller HTTP library or writing custom code instead.
