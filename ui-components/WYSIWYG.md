@@ -321,10 +321,37 @@ Here is the MenuBar component:
 
 ```typescript
 import { FC } from "react";
-import { MenuItemButton } from "./styles";
+import { styled } from "@mui/material/styles";
+
+const MenuItemButton = styled("button")(({ theme }) => ({
+  backgroundColor: "transparent",
+  border: "none",
+  borderRadius: "0.4rem",
+  color: theme.palette.black,
+  height: "1.75rem",
+  marginRight: "0.25rem",
+  padding: "0.25rem",
+  width: "1.75rem",
+  cursor: "pointer",
+
+  svg: {
+    fill: "rgba(21, 21, 21, .3)",
+    height: "100%",
+    width: "100%",
+  },
+
+  "&:hover, &.is-active": {
+    backgroundColor: theme.palette.black,
+    color: theme.palette.common.white,
+    svg: {
+      fill: theme.palette.common.white,
+    },
+  },
+}));
+
 
 interface IProps {
-  // Should be updated according to the package types
+  // Should be updated according to the tiptap package types
 }
 
 const MenuItem: FC<IProps> = ({ icon, title, action, isActive = null }) => (
@@ -340,4 +367,32 @@ const MenuItem: FC<IProps> = ({ icon, title, action, isActive = null }) => (
 
 export default MenuItem;
 
+```
+
+Here is an example of how to use this component in the react-hook-form:
+
+```typescript
+import { FC } from "react";
+import { Controller, useFormContext } from "react-hook-form";
+import { RichTextEditor } from "@atoms"; // it could be another path
+
+interface IProps {
+  name: string;
+}
+
+const RichTextEditorComponent:FC<IProps> = ({ name }) => {
+  const { control } = useFormContext();
+
+  return (
+    <Controller
+      name={name}
+      control={control}
+      render={({ field: { onChange, value } }) => (
+        <RichTextEditor onChange={onChange} value={value} />
+      )}
+    />
+  );
+};
+
+export default RichTextEditorComponent;
 ```
