@@ -7,7 +7,7 @@
 
 To build a WYSIWYG (What You See Is What You Get) editor component in React, you can make use of existing libraries such as tiptap, Draft.js or React-Quill. These libraries provide a set of pre-built components and utilities for building rich text editors.
 
-In the example below we will use tiptap editor.
+In the example below we will use tiptap editor. *It could be usefl for cases if you want to get output content as HTML*.
 It could look like this component below:
 ![tiptap editor](https://github.com/uptechteam/prism-athlete-fe/assets/13544983/194c5591-a4b3-4d1e-9a21-29a460bc21bb)
 
