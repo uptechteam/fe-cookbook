@@ -159,15 +159,6 @@ const RichTextEditor: FC<IProps> = ({
   );
 };
 
-RichTextEditor.propTypes = {
-  onChange: func.isRequired,
-  value: string.isRequired,
-  initialValue: string,
-  withEmptyState: bool,
-  error: string,
-  charactersLimit: number,
-};
-
 export default RichTextEditor;
 
 ```
@@ -205,7 +196,7 @@ const rightAlignIcon = <FormatAlignRightIcon fontSize="small" />;
 const justifyAlignIcon = <FormatAlignJustifyIcon fontSize="small" />;
 
 interface IProps {
-  editor: // take types from the tiptap package
+  // Should be updated according to the tiptap package types
 }
 
 const MenuBar: FC<IProps> = ({ editor }) => {
@@ -320,6 +311,8 @@ export default MenuBar;
 Here is the MenuBar component:
 
 ```typescript
+// MenuItem.tsx
+
 import { FC } from "react";
 import { styled } from "@mui/material/styles";
 
@@ -372,6 +365,8 @@ export default MenuItem;
 Here is an example of how to use this component in the react-hook-form:
 
 ```typescript
+// RichTextEditorComponent.tsx
+
 import { FC } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { RichTextEditor } from "@atoms"; // it could be another path
