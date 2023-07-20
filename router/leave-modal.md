@@ -67,6 +67,11 @@ const Container = () => {
     onOpenCustomModal: setOpen(true),
   });
 
-  return <CustomPrompt />;
+  return (
+    <CustomPrompt
+      open={open}
+      title="Are you sure you want to leave this page?"
+    />
+  );
 };
 ```
