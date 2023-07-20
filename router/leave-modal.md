@@ -46,7 +46,6 @@ export const useModalBeforeLeavePage = ({
     return () => {
       window.removeEventListener("popstate", handleBackButton);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, needShowDialog, navigate]);
 
   // show browser default modal when we try to refresh page
