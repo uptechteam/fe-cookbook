@@ -1,4 +1,4 @@
-# Most popular extensions for VSCode
+# Most popular extensions for VS Code
 
 1.  [GitLens](#gitlens)
 2.  [Import Cost](#import-cost)
@@ -8,6 +8,12 @@
 6.  [GitHub Copilot](#github-copilot)
 7.  [IntelliCode](#intellicode)
 8.  [Wallaby](#wallaby)
+9.  [Auto Import](#auto-import)
+10. [Clipboard History](#clipboard-history)
+11. [Git History](#git-history)
+12. [json](#json)
+13. [Mithril Emmet ](#mithril-emmet)
+14. [Window Colors](#window-colors)
 
 ## GitLens
 
@@ -41,7 +47,6 @@ The extension assists developers in finding and correcting spelling mistakes in 
 
 [Link to download](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker "Link to download")
 
-
 ## Prettier
 
 Prettier is a popular code formatting tool that helps developers automatically format their code to adhere to a consistent and opinionated code style. It supports multiple programming languages, including JavaScript, TypeScript, CSS, HTML, JSON, and more.
@@ -71,3 +76,63 @@ Wallaby.js is a developer productivity tool that runs your JavaScript and TypeSc
 ![Wallaby](https://wallabyjs.com/assets/img/vsc.gif "Wallaby")
 
 [Link to download](https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode "Link to download")
+
+## Auto Import
+
+Auto Import automatically imports modules and components in your JavaScript (or TypeScript) code as you type. It can significantly improve your coding workflow by saving time and reducing errors when dealing with imports.
+
+![Auto Import](https://res.cloudinary.com/practicaldev/image/fetch/s--alasjcHZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://blog.shanemitchell.dev/2831b20596aa2d650c6867d5b6f89fcb/auto-import-working.gif "Auto Import")
+
+[Link to download](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport "Link to download")
+
+## Clipboard History
+
+This extension provides a simple clipboard history manager that keeps track of your copied items and allows you to easily paste any of them.
+
+![Clipboard History](https://github.com/aefernandes/vscode-clipboard-history-extension/raw/master/images/demo-1.gif "Clipboard History")
+
+[Link to download](https://marketplace.visualstudio.com/items?itemName=Anjali.clipboard-history "Link to download")
+
+## Git History
+
+Git History (git log): This extension provides an interactive and user-friendly interface to explore the Git history of your project. It allows you to:
+
+- View commit details such as commit messages, authors, dates, and commit hashes.
+- See the changes introduced in each commit.
+- Compare changes between commits.
+- View the commit history in a tree or linear format.
+- Perform Git actions like checkout, reset, and more directly from the history view.
+
+![Git History](https://raw.githubusercontent.com/DonJayamanne/gitHistoryVSCode/main/images/gitLogv3.gif "Git History")
+
+[Link to download](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory "Link to download")
+
+## json
+
+This extension adds json support for Visual Studio Code.
+
+![json](https://raw.githubusercontent.com/ZainChen/vscode-json/master/assets/json.gif "json")
+
+[Link to download](https://marketplace.visualstudio.com/items?itemName=ZainChen.json "Link to download")
+
+## markdownlint
+
+This extension provides linting capabilities for Markdown files within the editor. It helps maintain consistent and error-free Markdown formatting, making it easier to write and read Markdown content.
+
+[Link to download](https://marketplace.visualstudio.com/items?itemName=ZainChen.json "Link to download")
+
+## Mithril Emmet
+
+Emmet is a popular tool for web developers that provides a set of powerful shortcuts for writing HTML and CSS code more quickly and efficiently. It allows you to use abbreviations to generate complete HTML/CSS code snippets. It's not tied to any particular JavaScript framework like Mithril, but it can be used with any web development stack.
+
+![Mithril Emmet](https://github.com/FallenMax/mithril-emmet/raw/HEAD/images/screenshot.gif "Mithril Emmet")
+
+[Link to download](https://marketplace.visualstudio.com/items?itemName=FallenMax.mithril-emmet "Link to download")
+
+## Window Colors
+
+Uniquely and automatically colors each VSCode window.
+
+![Window Colors](https://raw.githubusercontent.com/stuartcrobinson/unique-window-colors/master/img/live_dark_screenshot.png "Window Colors")
+
+[Link to download](https://marketplace.visualstudio.com/items?itemName=stuart.unique-window-colors "Link to download")
