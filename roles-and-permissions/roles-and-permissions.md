@@ -43,7 +43,7 @@ By following these best practices, you can create a secure and scalable React ap
 
 ## Hook
 
-Here's the usePermissions hook, assuming you have the user's permissions available in your Redux store:
+Here's the `usePermissions` hook, assuming you have the user's permissions available in your Redux store:
 
 ```js
 import { useSelector } from "react-redux";
@@ -77,7 +77,7 @@ export default MyComponent;
 
 ## HOC
 
-Here's the implementation of the withRolesAndPermissions HOC:
+Here's the implementation of the `withRolesAndPermissions` HOC:
 
 ```js
 const withRolesAndPermissions =
@@ -110,9 +110,9 @@ const withRolesAndPermissions =
 export default withRolesAndPermissions;
 ```
 
-In this HOC, we define a function withRolesAndPermissions that takes two arrays: requiredRoles and requiredPermissions. It returns a new function that takes the component to be wrapped (WrappedComponent) and returns an enhanced component (EnhancedComponent).
+In this HOC, we define a function `withRolesAndPermissions` that takes two arrays: requiredRoles and requiredPermissions. It returns a new function that takes the component to be wrapped (WrappedComponent) and returns an enhanced component (`EnhancedComponent`).
 
-The EnhancedComponent performs the role and permission checks based on the provided requiredRoles and requiredPermissions and renders the WrappedComponent only if the user has the necessary roles and permissions. If the user doesn't meet the requirements, it displays nothing.
+The `EnhancedComponent` performs the role and permission checks based on the provided requiredRoles and requiredPermissions and renders the WrappedComponent only if the user has the necessary roles and permissions. If the user doesn't meet the requirements, it displays nothing.
 
 To use this HOC in your components, follow these steps:
 
@@ -136,13 +136,13 @@ export default withRolesAndPermissions(
 )(MyComponent);
 ```
 
-In this example, we apply the withRolesAndPermissions HOC to MyComponent, indicating that the user must have either the 'admin' or 'manager' role and the 'edit_posts' permission to access this component. If the user doesn't meet these requirements, the HOC will render nothing instead of the wrapped component.
+In this example, we apply the `withRolesAndPermissions` HOC to `MyComponent`, indicating that the user must have either the `admin` or `manager` role and the `edit_posts` permission to access this component. If the user doesn't meet these requirements, the HOC will render nothing instead of the wrapped component.
 
 By using this composition component, you can easily manage roles and permissions in your React app and control access to different components or features based on the user's role and permissions.
 
 ## Wrapper component
 
-Here's the implementation of the RolesAndPermissionsWrapper component:
+Here's the implementation of the `RolesAndPermissionsWrapper` component:
 
 ```js
 const RolesAndPermissionsWrapper = ({
@@ -174,7 +174,7 @@ const RolesAndPermissionsWrapper = ({
 export default RolesAndPermissionsWrapper;
 ```
 
-In this Wrapper Component, we receive the requiredRoles and requiredPermissions as props. We then perform the role and permission checks based on the provided props. If the user has the necessary roles and permissions, the Wrapper Component will render the children. Otherwise, it will display the null.
+In this Wrapper Component, we receive the `requiredRoles` and `requiredPermissions` as props. We then perform the role and permission checks based on the provided props. If the user has the necessary roles and permissions, the Wrapper Component will render the children. Otherwise, it will display the `null`.
 To use this HOC in your components, follow these steps:
 
 #### Usage
@@ -200,6 +200,6 @@ export default () => (
 );
 ```
 
-In this example, we wrap MyComponent with the RolesAndPermissionsWrapper and specify that the user must have either the 'admin' or 'manager' role and the 'edit_posts' permission to access the component. If the user doesn't meet these requirements, the Wrapper Component will render the "Unauthorized" message instead of the wrapped component.
+In this example, we wrap `MyComponent` with the `RolesAndPermissionsWrapper` and specify that the user must have either the `admin` or `manager` role and the `edit_posts` permission to access the component. If the user doesn't meet these requirements, the Wrapper Component will render the `null` instead of the wrapped component.
 
 This approach provides a more declarative way of handling permissions and allows you to specify the requirements directly where you use the component.
