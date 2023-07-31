@@ -2,9 +2,10 @@
 
 1.  [Setup](#setup)
 2.  [Dynamic arrays](#dynamic-arrays)
-3.  [useFormikContext](#useFormikContext)
-4.  [Best practices](#best-practices)
-5.  [Optimization](#optimization)
+3.  [Custom form component](#custom-form-component)
+4.  [useFormikContext](#useFormikContext)
+5.  [Best practices](#best-practices)
+6.  [Optimization](#optimization)
 
 Formik is a popular open-source library for managing form state in React applications. It simplifies and streamlines the process of building and handling forms by providing a set of utilities and components.
 
@@ -178,6 +179,78 @@ Pass it a `name` property with the path to the key within `values` that holds th
 The `push` function is used to add new item to the array, while the `remove` function is used to remove existing item based on their index.
 
 More about working with dynamic arrays you can find here: https://formik.org/docs/api/fieldarray
+
+## Custom form component
+
+For creating custom from component, we can create a wrapper component that leverages `useField` to manage the form field's state and connect it with your custom form component. The `useField` hook allows you to connect a field in your form with Formik, providing the necessary props and validation handling.
+
+1\. Here's a example how to use `useField` hook with Mui `TextFiled`:
+
+```ts
+import { FC } from "react";
+import { useField } from "formik";
+import { TextField, StandardTextFieldProps } from "@mui/material";
+
+interface CustomTextFieldProps extends StandardTextFieldProps {
+  // any custom props
+}
+
+const CustomTextField: FC<CustomTextFieldProps> = (props) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <TextField
+      {...field}
+      {...props}
+      error={meta.touched && !!meta.error}
+      helperText={meta.touched && meta.error}
+    />
+  );
+};
+```
+
+2\. Use the custom text field component in your form
+
+```ts
+import { FC } from "react";
+import { Field, useFormik } from "formik";
+import { Button } from "@mui/material";
+import CustomTextField from "./CustomTextField";
+
+interface MyFormValues {
+  name: string;
+  email: string;
+}
+
+const initialValues: MyFormValues = {
+  name: "",
+  email: "",
+};
+
+const MyForm: FC = () => {
+  const formik = useFormik({
+    initialValues,
+    onSubmit: (values) => {
+      // Handle form submission logic here
+      console.log(values);
+    },
+  });
+
+  return (
+    <form onSubmit={formik.handleSubmit}>
+     {/* you can use Field from formik */}
+      <Field name="name" label="Name" component={CustomTextField} />
+      {/* or just pass your Component */}
+      <CustomTextField name="email" label="Email" />
+      <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
+    </form>
+  );
+};
+
+export default MyForm;
+```
 
 ## useFormikContext
 
