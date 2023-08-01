@@ -2,7 +2,7 @@
 
 - [General information](#general-information)
 - [Hook](#hook)
-- [Another approach with the useBlocker and useCallbackPrompt hooks](#another-approach-with-hooks)
+- [Another approach with the useBlocker and useCallbackPrompt hooks](#another-approach-with-the-useblocker-and-usecallbackprompt-hooks)
 
 ## General information
 
