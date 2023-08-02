@@ -19,6 +19,9 @@ Web applications normally need to fetch data from a server in order to display i
 - Optimistic updates to make the UI feel faster
 - Managing cache lifetimes as the user interacts with the UI
 
+ ![RTK Query advantages](https://github.com/uptechteam/fe-cookbook/assets/13544983/8e118765-31c9-4fa2-9016-a52b79f2f13c)
+ This screenshot was taken from [this](https://www.udemy.com/course/react-redux/) course.
+
 ## Setup
 
 To install RTK Query (Redux Toolkit Query), you need to follow these steps:
@@ -41,7 +44,10 @@ Here is a [link](https://redux-toolkit.js.org/tutorials/rtk-query/) of how you c
 
 Also, you can follow these guides here:
 [RTK Query Basics](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics)
-In the example above pay attention to the section about the refreshing caching data topics (both manual and automatic refreshing with cache invalidation using tags). More info is [here](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics#refreshing-cached-data).
+
+In the example above pay attention to the powerful advantage of this library - automatic hooks generation when we add [Query](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics#adding-the-single-post-query-endpoint) and [Mutation](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics#adding-the-new-post-mutation-endpoint) endpoints.
+
+Also, in the example above pay attention to the section about the refreshing caching data topics (both manual and automatic refreshing with cache invalidation using tags). More info is [here](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics#refreshing-cached-data).
 
 Here you can find more complex topics of using RTK Query to simplify your codebase and improve user experience (especially Invalidating Specific Items and Advanced cache updates):
 [RTK Query Advanced Patterns](https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced)
@@ -67,6 +73,8 @@ So all the data is essentially randomly generated, but we are going to save it t
 All of our data will be stored on an outside server. For this purpose we use JSON server library. This is a very simple API server that we can use to store any kind of data. So on the server, we're going to have a list of users albums and photos. And we're going to make requests to fetch those lists and store them inside of our Redux store.
 
 And then once they're inside of our store, of course, we're going to access that data inside of React Component and render the list of users albums or photos out.
+
+🚨 Here we use Async Thunk functions (Redux Toolkit) to handle users and RTK Query to handle albums and photos. 🚨
 
 [Demo](https://codesandbox.io/p/sandbox/confident-farrell-93xx5j) with the source code.
 
