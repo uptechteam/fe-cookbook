@@ -49,7 +49,7 @@ In the example below we build a very simple playlist application whenever a user
 
 Here is a mockup of this app:
 
- ![Application mockup](https://github.com/uptechteam/fe-vitejs-template/assets/13544983/36057427-da59-41f4-a259-d1f4e7582c11)
+ ![Application mockup](https://github.com/uptechteam/fe-cookbook/assets/13544983/c955d5cc-5fc6-4001-8638-d1234aadd467)
 
 And [demo](https://codesandbox.io/s/completed-media-project-zyz2mx?file=/src/App.js) with the source code.
 
