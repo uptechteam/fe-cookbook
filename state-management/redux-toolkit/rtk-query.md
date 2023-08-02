@@ -69,3 +69,5 @@ All of our data will be stored on an outside server. For this purpose we use JSO
 And then once they're inside of our store, of course, we're going to access that data inside of React Component and render the list of users albums or photos out.
 
 [Demo](https://codesandbox.io/p/sandbox/confident-farrell-93xx5j) with the source code.
+
+🚨🚨🚨 Don't forget to run the server (`npm run start:server`) in order to make this app work correctly.
