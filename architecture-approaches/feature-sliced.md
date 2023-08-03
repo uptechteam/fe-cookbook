@@ -20,10 +20,6 @@ Thus we have a set of puzzles that still need to be able to “assemble”. More
 
 #### Assemble correctly from Childhood!
 
-It's common knowledge among children that puzzles can be pieced together in various ways. Even if the picture doesn't align perfectly, the puzzle pieces stay in place. Isn't that amazing? The mother feels delighted, the father is filled with pride, and the little one realizes that everything is just fine.
-
-Many projects face similar issues such as disorganized imports, duplicated code, and the use of folder locations to define project structure. These problems are commonly referred to as "childhood diseases" and can quickly become a burden. Cleaning up the mess can cost hundreds of man-hours and thousands, if not billions, of dollars. Time is a valuable commodity and should be used efficiently.
-
 > FSD strives to be perfect. It was born with Mission — create a Сontrollable Unidirectional Encapsulated Flow (explicit one-way links).
 
 I imagine a stream that turns into an ocean. A small stream knows nothing about the ocean, but the ocean knows about all the streams, rivers, lakes, and seas that feed it.
