@@ -1,6 +1,12 @@
 # Infinite scroll
 
-### Example with intersection observer (do not support in old browsers, see the "Can i use" resource)
+1.  [Example with intersection observer](#example-with-intersection-observer)
+2.  [Implementation with listening scroll](#implementation-with-listening-scroll)
+3.  [NPM alternatives](#npm-alternatives)
+
+### Example with intersection observer
+
+> do not support in old browsers, see the "Can i use" resource
 
 This component is an Infinite Scroll component in React. It takes the following props: children (the content to be rendered), loading (a boolean indicating whether more data is currently being fetched), and fetchData (a function to fetch additional data).
 
@@ -59,7 +65,9 @@ export const InfiniteScroll: FC<Props> = ({ children, loading, fetchData }) => {
 };
 ```
 
-### If you need support in old browsers you can use implementation with listening scroll
+### Implementation with listening scroll
+
+> If you need support in old browsers
 
 The same logic of implementation but with listening scroll
 
@@ -104,3 +112,8 @@ const InfiniteScrollComponent: FC<Props> = ({
   );
 };
 ```
+
+## NPM alternatives
+
+[react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component)
+[react-window-infinite-loader](https://www.npmjs.com/package/react-window-infinite-loader)
