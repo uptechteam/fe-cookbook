@@ -14,10 +14,11 @@ It could look like this component below:
 ## Setup
 
 In the example below we use [react-dropdown-tree-select](https://dowjones.github.io/react-dropdown-tree-select/#/story/readme) library for configuring this component.
-Install this package to your app:
+Also, we need to install the `lodash.isequal` package for coparing objects inside this component.
+So install thesese packages to your app:
 
 ```bash
-pnpm install react-dropdown-tree-select
+pnpm install react-dropdown-tree-select lodash.isequal
 ```
 
 ## Usage
