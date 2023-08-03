@@ -86,6 +86,8 @@ In the example below we define `useBlocker` and `useCallbackPrompt` hooks:
 import { useEffect, useContext } from "react";
 import { UNSAFE_NavigationContext } from "react-router-dom";
 
+/* !!! Note that this hook works only with react-router-dom 6.3.0 version and below !!! */
+
 // Handle the logic of blocking some action in the router prompt
 export const useBlocker = (blocker, when = true) => {
   const navigator = useContext(UNSAFE_NavigationContext).navigator;
