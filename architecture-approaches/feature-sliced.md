@@ -8,11 +8,11 @@
 
 **“Feature Sliced Design”** — architectural design methodology for Front-End applications, a design approach where a product’s features are divided into separate, standalone components, or “slices”. Each slice is then designed and developed independently, allowing for greater flexibility, modularity, and scalability in the design process. This approach is often used in software development and can be applied to the design of web or mobile applications, as well as other types of software products.
 
-![diagram1](diagram1.webp)
+![diagram1](assets/diagram1.webp)
 
 We figured out that idea behind FSD is to break down a complex product into smaller, more manageable pieces in each “Layer”. Each “Layer” might contain other manageable pieces — “Slices”. “Slaces” in turn may have “Segments”.
 
-![diagram2](diagram2.webp)
+![diagram2](assets/diagram2.webp)
 
 This can lead to faster development times, better team collaboration, and a more flexible and scalable final product.
 
@@ -28,7 +28,7 @@ I imagine a stream that turns into an ocean. A small stream knows nothing about 
 
 Technically, It means that the Bottom Layer (for example, shared) knows nothing about all the layers above or next to it. Upper layers (ex. entities) can use all the layers below, like a river that flows into the sea, not vice versa.
 
-![diagram3](diagram3.webp)
+![diagram3](assets/diagram3.webp)
 
 Let’s remember these Scope Rules. This is a small price for the flexibility and adaptivity that it gives.
 
