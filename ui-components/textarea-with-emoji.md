@@ -11,7 +11,7 @@ An emoji picker component is a user interface element that allows users to selec
 The emoji picker typically appears as a small window or popup that contains a collection of emojis categorized into various groups like smileys and people, animals and nature, food and drink, etc. Users can scroll through the list or use search functionality to find the desired emoji and click or tap on it to insert it into the text input field, comment section, or wherever they need it.
 
 It could look like this component below:
-![emoji picker component](https://github.com/uptechteam/prism-athlete-fe/assets/13544983/5be21177-a78a-4901-b96d-d116dfb9305b)
+![emoji picker component](https://github.com/uptechteam/fe-cookbook/assets/13544983/39d199a3-90e5-4a34-8712-aa69f9f0fef8)
 
 ## Setup
 
