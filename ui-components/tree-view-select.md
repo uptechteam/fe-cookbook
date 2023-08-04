@@ -14,7 +14,7 @@ It could look like this component below:
 
 ## Usage
 
-Here is a [demo](https://codesandbox.io/p/sandbox/github/MaxKalashnyk/tree-select-with-search/tree) of this component in CodeSandbox.
+Here is a [demo](https://codesandbox.io/p/sandbox/aged-field-4jwtrq) of this component in CodeSandbox.
 We use react-hook-form and MUI here.
 
 ```typescript
