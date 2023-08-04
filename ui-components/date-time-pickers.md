@@ -8,9 +8,9 @@
     - [React-Day-Picker](#react-day-picker)
 2.  [Date utility libraries](#date-utility-libraries)
     - [Date-fns](#date-fns)
-    - [Moment.js](#moment.js)
+    - [Luxon](#luxon)
     - [Day.js](#day.js)
-3.  [Pros and cons](#pros-and-cons)
+3.  [Summary](#summary)
 
 ## Well-known date and time picker libraries
 
@@ -35,6 +35,11 @@ Documentation: https://reactdatepicker.com/
 ### MUI Pickers
 
 **MUI Pickers** is an extension of the MUI library that provides reusable and customizable date and time pickers with a Material Design look and feel.
+
+> **Note!** The Date and Time Pickers are available in two packages:
+
+> - `@mui/x-date-pickers`, which is MIT licensed (free forever) and contains all the components to edit a date and/or a time.
+> - `@mui/x-date-pickers-pro`, which is commercially licensed and contains additional components to edit date and/or time ranges.
 
 **Features:**
 
@@ -119,25 +124,27 @@ Official Website: https://date-fns.org/
 
 ---
 
-### Moment.js
+### Luxon
 
-**moment.js** is a popular date manipulation library for JavaScript. It provides a simple and easy-to-use API for parsing, validating, manipulating, and formatting dates and times.
+**Luxon** is a powerful and modern date manipulation library with excellent internationalization and time zone support. It has been gaining popularity as a suitable alternative to Moment.js due to its modern features, performance improvements, and active development.
 
 **Pros:**
 
-- Rich functionality and comprehensive feature set for date manipulation, formatting, and internationalization.
-- Well-established and widely used, leading to a large community and extensive resources.
-- Mature library with long-term support and maintenance.
-- API is similar to many other date libraries, making it easy to switch from other libraries to Moment.js.
+- Modern and robust library developed by the creators of Moment.js.
+- Immutable design for predictable date operations.
+- Comprehensive API for parsing, formatting, manipulating, and working with time zones.
+- Excellent internationalization (i18n) support.
+- Effective time zone handling using the IANA Time Zone Database.
+- Active development and maintenance.
+- Good performance.
 
 **Cons:**
 
-- Considered heavy and bloated compared to other modern alternatives, leading to larger bundle sizes.
-- Moment.js modifies the original Date object, which can lead to unexpected behavior and bugs in certain scenarios.
-- Moment.js has stopped active development and only receives critical bug fixes, with maintainers recommending other libraries for new projects.
+- Smaller community compared to Date-fns.
+- Slightly larger bundle size compared to some other lightweight alternatives.
 
-GitHub Repository: https://github.com/moment/moment
-Official Website: https://momentjs.com/
+GitHub Repository: https://github.com/moment/luxon
+Official Website: https://moment.github.io/luxon/
 
 ---
 
@@ -154,8 +161,16 @@ Official Website: https://momentjs.com/
 
 **Cons:**
 
-- Smaller community compared to Moment.js, which may result in fewer third-party plugins and resources.
-- Although it's similar to Moment.js, it might not have all the same features and functionality as Moment.js, which could be a concern for projects that rely heavily on specific Moment.js functionalities.
+- Smaller community compared to date-fns.
+- Might not have all the same features and functionalities as Moment.js, which could be a concern for projects that rely heavily on specific Moment.js features.
 
 GitHub Repository: https://github.com/iamkun/dayjs
 Official Website: https://day.js.org/
+
+## Summary
+
+In summary, the choice among these libraries depends on your project's specific needs and priorities:
+
+- If you need a modern and robust library with excellent internationalization and time zone support, **Luxon** might be a great choice, especially for projects that require precise time zone handling and have more tolerance for a slightly larger bundle size.
+- If you want a lightweight alternative with an API inspired by Moment.js and prefer a smaller bundle size, **Day.js** is a suitable option, especially if you are transitioning from Moment.js or working on projects that prioritize smaller bundle sizes.
+- If your project needs a lightweight and popular option with a functional programming approach and good TypeScript support, **Date-fns** is a strong contender, particularly for projects that emphasize bundle size optimization and adherence to modern JavaScript practices.
