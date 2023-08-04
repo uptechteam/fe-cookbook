@@ -1,7 +1,10 @@
 # Atomic design
 
 - [General information](#general-information)
-- [Structure](#structure)
+  <<<<<<< HEAD
+- # [Structure](#structure)
+- [Structure example](#structure-example)
+  > > > > > > > c5ecca17f9f837c4f4d826a1e2a107842e3b3822
 
 ## General information
 
@@ -9,19 +12,19 @@ The main idea behind Atomic Design is to break down the user interface into smal
 
 The five stages of Atomic Design are:
 
-1. Atoms:
+1. **Atoms**:
    Atoms are the smallest and simplest UI elements, such as buttons, input fields, labels, and icons. They are the building blocks of all other UI components and should be designed to be highly reusable.
 
-2. Molecules:
+2. **Molecules**:
    Molecules are combinations of two or more atoms that work together to create a more significant, reusable component. For example, a form input with a label and validation message is a molecule formed by combining several atoms.
 
-3. Organisms:
+3. **Organisms**:
    Organisms are more complex components that combine molecules and atoms to form functional and recognizable sections of a user interface. Examples of organisms could be a header, footer, or a card component with various content elements.
 
-4. Templates:
+4. **Templates**:
    Templates represent the layout of a page and define the placement of organisms within the overall structure. They provide a framework for organizing content on a specific type of page.
 
-5. Pages:
+5. **Pages**:
    Pages are instances where templates are filled with actual content to create fully functioning web pages or application screens.
 
 The benefit of Atomic Design is that it promotes consistency, scalability, and reusability. By breaking down the UI into smaller components and adhering to a consistent naming and organizational structure, design and development teams can work more efficiently. Changes to individual atoms or molecules automatically propagate to higher-level components, ensuring a coherent user experience.
