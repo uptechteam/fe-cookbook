@@ -68,6 +68,19 @@ pick 07e292b [FEC-53]-update-formik
 ```
 6. **Save and exit**: After making the desired changes, save the file and exit the editor. In command line, you can use `:wq` to save and exit.
 
+I know that Vim can be challenging to work in for people who are not familiar with it. In this article, we'll cover some fundamental topics like how to exit Vim, rather than quitting Vim.
+
+I will also include the command that you can use to reveal the corresponding help documentation. To do that, first we need to press ESC a few times, and run the command provided, for example, :h vim-modes, and press Enter.
+
+### How to Exit Vim
+Press ESC once (sometimes twice)
+Make sure you are using the English input method
+The next step depends on the current status and your expectations:
+If you didn't make any changes, type :q and press Enter/return
+If you made some changes and would like to keep them, type :wq and press Enter/return
+If you made some changes and would rather discard them, type :q! and press Enter/return
+If you want to understand in more detail how this works, let's dive in.
+
 ### Rebase onto a Different Branch
 
 To rebase your current branch onto a different branch:
