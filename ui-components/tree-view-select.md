@@ -1,7 +1,8 @@
 # Tree view select Component
 
 1. [General information](#general-info)
-3. [Usage](#usage)
+2. [Usage](#usage)
+3. [Improvements](#improvements)
 
 ## General information
 
@@ -10,6 +11,7 @@ A tree view select component refers to a user interface element used in software
 The tree view select component typically displays a collapsible and expandable tree structure, allowing users to navigate through the hierarchy and select items. Each item in the tree can have child items, forming a nested structure. When an item is selected, its children, if any, are revealed, and the user can continue to drill down the tree until they find the desired item.
 
 It could look like this component below:
+
 ![tree view select](https://github.com/uptechteam/fe-cookbook/assets/13544983/a7ae7a13-e6c9-4b78-990f-9b2ca55b5cba)
 
 ## Usage
@@ -348,3 +350,7 @@ const outputLocationsData = [
 ];
 
 ```
+
+## Improvements
+
+In this example, we need to handle the case with a click outside component.
