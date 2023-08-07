@@ -34,7 +34,43 @@ A workflow consists of one or more jobs, and each job consists of one or more st
 
 A GitHub Actions workflow is defined using YAML syntax and consists of several key components that define the automation tasks to be performed. Below is an overview of the workflow structure:
 
-### 3.1 Workflow Name
+### 3.1 Runs On
+
+GitHub Actions can run on the following operating systems:
+
+1. **Linux**: GitHub Actions primarily runs on Linux virtual machines, and it's the default environment for most workflows.
+
+2. **macOS**: GitHub Actions also supports macOS virtual machines, allowing you to build and test applications specifically designed for Apple platforms.
+
+3. **Windows**: GitHub Actions provides Windows virtual machines for running workflows that target Windows-based applications.
+
+### Supported Runners
+
+GitHub Actions uses runners to execute workflows. A runner is a machine that's hosted by GitHub or your own infrastructure. GitHub provides various types of runners:
+
+1. **GitHub-hosted runners**: These are virtual machines provided by GitHub to run workflows. They come in different configurations based on the operating system and tooling.
+
+2. **Self-hosted runners**: You can set up your own machines as runners to execute GitHub Actions workflows. This allows for more customization and control over the runner environment.
+
+### System Requirements for Self-Hosted Runners
+
+If you plan to use self-hosted runners for your GitHub Actions workflows, here are the general system requirements:
+
+- **Operating System**: Self-hosted runners can run on Linux, macOS, and Windows.
+- **Processor**: Modern multi-core processors are recommended for better performance.
+- **Memory**: The minimum required RAM may vary based on the types of workflows you intend to run. As a guideline, at least 2GB of RAM is recommended, but more may be needed for complex workflows.
+- **Disk Space**: Sufficient disk space is necessary to store repositories, dependencies, and artifacts generated during workflows.
+- **Network**: Reliable internet connectivity is essential for the runner to communicate with GitHub's servers.
+
+### Software Requirements for Self-Hosted Runners
+
+To set up self-hosted runners, ensure that the following software is installed on the runner machine:
+
+- **Git**: You need Git installed on the runner machine to clone repositories and interact with version control.
+- **Docker (if used)**: If your workflows involve Docker containers, you need Docker installed on the runner machine.
+- **Language Runtimes**: Depending on the programming languages you use in your workflows, you might need to install the corresponding language runtimes (e.g., Node.js, Python, Java).
+
+### 3.2 Workflow Name
 
 The name of the workflow is used to identify it in the GitHub Actions dashboard and can be any descriptive string.
 
@@ -42,7 +78,7 @@ The name of the workflow is used to identify it in the GitHub Actions dashboard 
 name: My Workflow
 ```
 
-### 3.2 Events (on)
+### 3.3 Events (on)
 
 The `on` keyword specifies the events that trigger the workflow. These events can be actions like push, pull requests, issue comments, scheduled events, etc.
 
@@ -58,7 +94,7 @@ on:
       - synchronize
 ```
 
-### 3.3 Jobs
+### 3.4 Jobs
 
 A workflow can consist of one or more jobs. Each job is a set of steps that execute on the same runner. Jobs run in parallel by default but can also be defined to run sequentially.
 
@@ -82,7 +118,7 @@ jobs:
         run: npm test
 ```
 
-### 3.4 Steps
+### 3.5 Steps
 
 Each job consists of a series of steps. Steps are individual tasks that are executed in sequence. They can be either predefined actions provided by GitHub or custom shell commands.
 
@@ -96,7 +132,7 @@ steps:
     run: npm run build
 ```
 
-### 3.5 Environment
+### 3.6 Environment
 
 The `env` keyword allows you to set environment variables that will be available to all the steps in a job.
 
@@ -110,7 +146,7 @@ jobs:
       ...
 ```
 
-### 3.6 Services
+### 3.7 Services
 
 The `services` keyword allows you to define additional services that are run alongside the job. These services can be used to provide additional dependencies, databases, etc.
 
@@ -129,7 +165,7 @@ jobs:
       ...
 ```
 
-### 3.7 Secrets
+### 3.8 Secrets
 
 Secrets are encrypted environment variables that can be used in your workflows. They allow you to store sensitive information securely, such as API keys and passwords.
 
@@ -144,7 +180,7 @@ jobs:
         run: deploy_script.sh
 ```
 
-### 3.8 Artifacts
+### 3.9 Artifacts
 
 Artifacts allow you to persist data between jobs in a workflow. They can be used to pass build outputs, test results, or other data between different stages of the workflow.
 
