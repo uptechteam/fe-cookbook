@@ -4,6 +4,8 @@
 
 HTTP Basic Authentication is a simple authentication mechanism built into the HTTP protocol. It is a way to protect resources on a web server by requiring users to provide a username and password when attempting to access those resources.
 
+![diagram1](assets/basic-auth.png)
+
 ## Example
 
 ```typescript
