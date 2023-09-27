@@ -45,7 +45,7 @@ export const config = {
 
 This code appears to be a middleware implemented in a Next.js application to handle HTTP Basic Authentication. Let's break down the code step by step:
 
-####Import Statements:
+#### Import Statements:
 
 ```typescript
 import { NextRequest, NextResponse } from "next/server";
