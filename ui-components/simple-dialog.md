@@ -93,6 +93,47 @@ export const danger = (config: Config) => {
 };
 ```
 
+## Pros
+
+1. Reusability:
+
+   - The DangerModal component is reusable and can be easily integrated into different parts of the application wherever a confirmation or danger modal is needed.
+   - The danger function provides a convenient way to display the modal with customizable configurations.
+
+2. Styling:
+
+   - The use of Emotion for styling (StyledModal) allows for a flexible and easily maintainable styling approach within the component.
+
+3. Separation of Concerns:
+
+   - The separation of concerns is maintained by keeping the modal logic and presentation encapsulated within the DangerModal component.
+
+4. Promise-Based Interaction:
+
+   - The use of promises (new Promise(...)) in the danger function allows for easy handling of asynchronous interactions. The promise is resolved or rejected based on user actions.
+
+5. Dynamic Rendering:
+
+   - The modal is dynamically rendered using React's createRoot and can be mounted on a specific DOM element (modalRoot), providing flexibility in where the modal is rendered within the DOM.
+
+## Cons
+
+1. Global DOM Dependency:
+
+   - The reliance on document.getElementById('modal') to find the modal root assumes that there is an HTML element with the ID 'modal' in the global DOM. This might lead to issues in a more complex or dynamically changing DOM structure.
+
+2. Limited Configuration:
+
+   - The current configuration (Config interface) is minimal, only allowing customization of the modal title. If more advanced configurations or variations of the modal are needed, the system may need enhancements.
+
+3. Unmounting Entire React Tree:
+
+   - The root.unmount() method is used to unmount the entire React tree, which might have unintended consequences if other components are rendered in the same root. This approach assumes that the modal is the only content in the specified root.
+
+4. Blocking Promise Chain:
+
+   - The current design blocks the execution of the code until the user interacts with the modal. In some scenarios, this might be undesirable, especially in UIs where asynchronous operations should continue while awaiting user input.
+
 ## Usage
 
 ```typescript
@@ -104,10 +145,28 @@ interface config = {
  actionButtonName?: string, default: 'Start' (for info modal) | 'Delete' (for danger modal)
 }
 
+// run this code in any place of your project (only client side)
 danger(config).then(() => {
   // run success code (can be ignored)
-}).catch(()=>{
+}).catch(() => {
   // run failure code (can be ignored)
 })
 
+
+// EXAMPLE WITH CUSTOM HOOK
+export const useCustomHook = () => {
+  const handleDangerAction = async () => {
+    try {
+      await danger(config);
+
+      // run success code
+    } catch {
+      // run cancel code or ignore it
+    }
+  };
+
+  return {
+    handleDangerAction,
+  };
+};
 ```
