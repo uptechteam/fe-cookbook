@@ -1,10 +1,7 @@
 # Atomic design
 
 - [General information](#general-information)
-  <<<<<<< HEAD
-- # [Structure](#structure)
 - [Structure example](#structure-example)
-  > > > > > > > c5ecca17f9f837c4f4d826a1e2a107842e3b3822
 
 ## General information
 

@@ -116,4 +116,5 @@ const InfiniteScrollComponent: FC<Props> = ({
 ## NPM alternatives
 
 [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component)
+
 [react-window-infinite-loader](https://www.npmjs.com/package/react-window-infinite-loader)

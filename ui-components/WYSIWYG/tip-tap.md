@@ -9,6 +9,7 @@ To build a WYSIWYG (What You See Is What You Get) editor component in React, you
 
 In the example below we will use tiptap editor. *It could be usefl for cases if you want to get output content as HTML*.
 It could look like this component below:
+
 ![tiptap editor](https://github.com/uptechteam/prism-athlete-fe/assets/13544983/194c5591-a4b3-4d1e-9a21-29a460bc21bb)
 
 Tiptap is a modern and extensible WYSIWYG (What You See Is What You Get) editor framework for web applications. It provides a set of tools and components to build rich text editors in various frameworks, including React.
