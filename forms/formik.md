@@ -1,11 +1,11 @@
 # Formik
 
-1.  [Setup](#setup)
-2.  [Dynamic arrays](#dynamic-arrays)
-3.  [Custom form component](#custom-form-component)
-4.  [useFormikContext](#useFormikContext)
-5.  [Best practices](#best-practices)
-6.  [Optimization](#optimization)
+1. [Setup](#setup)
+2. [Dynamic arrays](#dynamic-arrays)
+3. [Custom form component](#custom-form-component)
+4. [useFormikContext](#useFormikContext)
+5. [Best practices](#best-practices)
+6. [Optimization](#optimization)
 
 Formik is a popular open-source library for managing form state in React applications. It simplifies and streamlines the process of building and handling forms by providing a set of utilities and components.
 

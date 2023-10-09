@@ -1,18 +1,18 @@
 # Most popular extensions for VS Code
 
-1.  [GitLens](#gitlens)
-2.  [Import Cost](#import-cost)
-3.  [Auto Rename Tag](#auto-rename-tag)
-4.  [Code Spell Checker](#code-spell-checker)
-5.  [Prettier](#prettier)
-6.  [GitHub Copilot](#github-copilot)
-7.  [IntelliCode](#intellicode)
-8.  [Wallaby](#wallaby)
-9.  [Auto Import](#auto-import)
+1. [GitLens](#gitlens)
+2. [Import Cost](#import-cost)
+3. [Auto Rename Tag](#auto-rename-tag)
+4. [Code Spell Checker](#code-spell-checker)
+5. [Prettier](#prettier)
+6. [GitHub Copilot](#github-copilot)
+7. [IntelliCode](#intellicode)
+8. [Wallaby](#wallaby)
+9. [Auto Import](#auto-import)
 10. [Clipboard History](#clipboard-history)
 11. [Git History](#git-history)
 12. [json](#json)
-13. [Mithril Emmet ](#mithril-emmet)
+13. [Mithril Emmet](#mithril-emmet)
 14. [Window Colors](#window-colors)
 
 ## GitLens

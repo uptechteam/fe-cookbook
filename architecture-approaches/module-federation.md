@@ -1,8 +1,8 @@
 # Module federation
 
-- [General information](#general-information)
-- [When do we need use?](#when-do-we-need-use)
-- [Get started](#get-started)
+1. [General information](#general-information)
+2. [When do we need use?](#when-do-we-need-use)
+3. [Get started](#get-started)
 
 ## General information
 

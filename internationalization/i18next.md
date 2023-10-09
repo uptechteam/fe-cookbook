@@ -1,14 +1,14 @@
-## i18next
+# i18next
 
-1.  [Integration](#integration)
-2.  [Switcher](#switcher)
-3.  [Mock tests](#mock-tests)
+1. [Integration](#integration)
+2. [Switcher](#switcher)
+3. [Mock tests](#mock-tests)
 
-*   Advantages:  
+* Advantages:  
     \- Standalone library with broad platform and framework support.  
     \- Rich feature set including language detection, interpolation, and pluralization.  
     \- Large community and good ecosystem support.
-*   Disadvantages:  
+* Disadvantages:  
     \- Requires additional configuration and setup.  
     \- Can have a steeper learning curve compared to more straightforward solutions.
 

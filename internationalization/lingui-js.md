@@ -1,8 +1,8 @@
 # LinguiJS
 
-1.  [Integration](#integration)
-2.  [Switcher](#switcher)
-3.  [Mock tests](#mock-tests)
+1. [Integration](#integration)
+2. [Switcher](#switcher)
+3. [Mock tests](#mock-tests)
 
 Here you can find [documentation](https://lingui.dev/)
 

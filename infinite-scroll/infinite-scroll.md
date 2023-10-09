@@ -1,10 +1,10 @@
 # Infinite scroll
 
-1.  [Example with intersection observer](#example-with-intersection-observer)
-2.  [Implementation with listening scroll](#implementation-with-listening-scroll)
-3.  [NPM alternatives](#npm-alternatives)
+1. [Example with intersection observer](#example-with-intersection-observer)
+2. [Implementation with listening scroll](#implementation-with-listening-scroll)
+3. [NPM alternatives](#npm-alternatives)
 
-### Example with intersection observer
+## Example with intersection observer
 
 > do not support in old browsers, see the "Can i use" resource
 
@@ -65,7 +65,7 @@ export const InfiniteScroll: FC<Props> = ({ children, loading, fetchData }) => {
 };
 ```
 
-### Implementation with listening scroll
+## Implementation with listening scroll
 
 > If you need support in old browsers
 

@@ -1,9 +1,9 @@
 # Roles and permissions
 
-- [General information](#general-information)
-- [Hook](#hook)
-- [HOC](#hoc)
-- [Wrapper component](#wrapper-component)
+1. [General information](#general-information)
+2. [Hook](#hook)
+3. [HOC](#hoc)
+4. [Wrapper component](#wrapper-component)
 
 ## General information
 
@@ -61,7 +61,7 @@ const usePermissions = () => {
 export default usePermissions;
 ```
 
-#### Usage
+### Usage
 
 ```js
 const MyComponent = () => {
@@ -116,7 +116,7 @@ The `EnhancedComponent` performs the role and permission checks based on the pro
 
 To use this HOC in your components, follow these steps:
 
-#### Usage
+### Usage
 
 ```js
 const MyComponent = (props) => {
@@ -177,7 +177,7 @@ export default RolesAndPermissionsWrapper;
 In this Wrapper Component, we receive the `requiredRoles` and `requiredPermissions` as props. We then perform the role and permission checks based on the provided props. If the user has the necessary roles and permissions, the Wrapper Component will render the children. Otherwise, it will display the `null`.
 To use this HOC in your components, follow these steps:
 
-#### Usage
+### Usage
 
 ```js
 const MyComponent = (props) => {
