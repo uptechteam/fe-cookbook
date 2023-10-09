@@ -1,6 +1,9 @@
 # Table of contents
 
-Add a generic information about the frontend cookbook.
+This document compiles industry best practices, proven strategies, and valuable insights to empower developers in their front-end projects.
+Using information from chapters of this document could help you save time during the development process and during the work with estimations.
+This cookbook is based on the experience of the whole Uptech front-end team during our work on different projects over the last 2 years.
+Also, it could be helpful for newcomers who don't have relevant experience with some technologies that we use on a regular basis.
 
 - [Architecture](https://github.com/uptechteam/fe-cookbook/tree/main/architecture-approaches)
   - [Atomic](https://github.com/uptechteam/fe-cookbook/blob/main/architecture-approaches/atomic.md)  
@@ -72,4 +75,3 @@ Add a generic information about the frontend cookbook.
   - [Tree view select](https://github.com/uptechteam/fe-cookbook/blob/main/ui-components/tree-view-select.md)
   - [WYSIWYG](https://github.com/uptechteam/fe-cookbook/tree/main/ui-components/WYSIWYG)
     - [Tiptap](https://github.com/uptechteam/fe-cookbook/blob/main/ui-components/WYSIWYG/tip-tap.md)
-
