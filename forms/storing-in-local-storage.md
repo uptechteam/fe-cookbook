@@ -2,8 +2,8 @@
 
 1. [General](#general)
 2. [useLocalStorage hook](#uselocastorage-hook)
-  - [How to use with react-hook-form](#how-to-use-with-react-hook-form)
-  - [How to use with Formik](#how-to-use-with-formik)
+    - [How to use with react-hook-form](#how-to-use-with-react-hook-form)
+    - [How to use with Formik](#how-to-use-with-formik)
 
 ## General
 

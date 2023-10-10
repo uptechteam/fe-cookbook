@@ -1,17 +1,17 @@
 # What's New in Next.js 13?
 
-*   [Turbopack](#turbopack)
-*   [/app Directory](#/app-directory)
-    *   [layout.js](#layouts)
-    *   [loading.js](#loading-convention)
-    *   [error.js](#layouts)
-    *   [not-found.js](#layouts)
-*   [Data Fetching](#data-fetching)
-*   [Improvements](#improvements)
-    *   [next/image](#next/image)
-    *   [@next/font](#@next/font)
-    *   [next/link](#next/link)
-*   [Caching with Fetch](#caching-with-fetch)
+1. [Turbopack](#turbopack)
+2. [/app Directory](#/app-directory)
+    * [layout.js](#layouts)
+    * [loading.js](#loading-convention)
+    * [error.js](#layouts)
+    * [not-found.js](#layouts)
+3. [Data Fetching](#data-fetching)
+4. [Improvements](#improvements)
+    * [next/image](#next/image)
+    * [@next/font](#@next/font)
+    * [next/link](#next/link)
+5. [Caching with Fetch](#caching-with-fetch)
 
 ## Turbopack
 
@@ -89,7 +89,7 @@ The app directory contains folders and files, where the folders are used to defi
 
 ### layout.js
 
-*   **layout.js** contains the UI for elements and contents that are common to a route segment and its children. This file eliminates the redundancy of having to repeat certain components or contents on every page of a segment and its descendants.
+* **layout.js** contains the UI for elements and contents that are common to a route segment and its children. This file eliminates the redundancy of having to repeat certain components or contents on every page of a segment and its descendants.
 
 ```javascript
 // app/dashboard/layout.js directory
@@ -129,7 +129,7 @@ export default function RootLayout({ children }) {
 
 ### loading.js
 
-*   **loading.js** encompass the UI for the loading state when data is being fetched from the server. React 18 Suspense feature makes this possible to implement to boost your user’s experience. It wraps a route segment and its descendants in the [React 18 Suspense Boundary.](https://react.dev/reference/react/Suspense#)
+* **loading.js** encompass the UI for the loading state when data is being fetched from the server. React 18 Suspense feature makes this possible to implement to boost your user’s experience. It wraps a route segment and its descendants in the [React 18 Suspense Boundary.](https://react.dev/reference/react/Suspense#)
 
 ```javascript
 // app/dashboard/loading.js directory
@@ -142,7 +142,7 @@ export default function DashboardLoading() {
 
 ### error.js
 
-*   **error.js** handles the UI content for scenarios where errors are caught may be due to a wrong request or bug in code. This file will contain the design for the content to display to users with necessary contextual information. It wraps a route segment and its descendants in the React Error Boundary feature.
+* **error.js** handles the UI content for scenarios where errors are caught may be due to a wrong request or bug in code. This file will contain the design for the content to display to users with necessary contextual information. It wraps a route segment and its descendants in the React Error Boundary feature.
 
 ```javascript
 // app/dashboard/error.js directory
@@ -175,7 +175,7 @@ export default function DashboardError({ error, reset }) {
 
 ### not-found.js
 
-*   **not-found.js** handles the display of a 404 error page, this file invokes the notFound function which injects a `<meta name="robots" content="noindex" />` tag and throws a `NEXT_NOT_FOUND` error and also terminates rendering the UI of the route segment it is contained.
+* **not-found.js** handles the display of a 404 error page, this file invokes the notFound function which injects a `<meta name="robots" content="noindex" />` tag and throws a `NEXT_NOT_FOUND` error and also terminates rendering the UI of the route segment it is contained.
 
 ```javascript
 // app/not-found.js
