@@ -1,15 +1,15 @@
 # Styled Components
  
-[Installation](#installation)   
-[Creating styled components](#creating-styled-components)   
-[Styling props](#styling-props)    
-[Styling nested components](#styling-nested-components)   
-[Theming with styled-components](#theming-with-styled-components)     
-[Resetting and normalizing global styles](#resetting-and-normalizing-global-styles)   
-[Using styled-components with TypeScript](#using-styled-components-with-typescript)    
-[Using css function and mixins](#using-css-function-and-mixins)    
-[Best practices for naming styled-components](#best-practices-for-naming-styled-components)   
-[Best practices and edge cases](#best-practices-and-edge-cases)
+1. [Installation](#installation)   
+2. [Creating styled components](#creating-styled-components)   
+3. [Styling props](#styling-props)    
+4. [Styling nested components](#styling-nested-components)   
+5. [Theming with styled-components](#theming-with-styled-components)     
+6. [Resetting and normalizing global styles](#resetting-and-normalizing-global-styles)   
+7. [Using styled-components with TypeScript](#using-styled-components-with-typescript)    
+8. [Using css function and mixins](#using-css-function-and-mixins)    
+9. [Best practices for naming styled-components](#best-practices-for-naming-styled-components)   
+10. [Best practices and edge cases](#best-practices-and-edge-cases)
 
 Official docs you can find [here](https://styled-components.com/docs).
 

@@ -1,4 +1,4 @@
-# WYSIWYG
+# Tiptap based WYSIWYG
 
 * [General information](#general-information)
 * [Configuration](#configuration)

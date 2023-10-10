@@ -1,12 +1,12 @@
 # MUI
  
-[Installation](#installation)  
-[Basic usage](#basic-usage)   
-[Styling](#styling)   
-[Theming](#theming)     
-[Organizing files structure](#organizing-files-structure)   
-[Example of files](#example-of-files)   
-[Using MUI with TypeScript](#using-mui-with-typescript)
+1. [Installation](#installation)  
+2. [Basic usage](#basic-usage)   
+3. [Styling](#styling)   
+4. [Theming](#theming)     
+5. [Organizing files structure](#organizing-files-structure)   
+6. [Example of files](#example-of-files)   
+7. [Using MUI with TypeScript](#using-mui-with-typescript)
 
 ## Installation
 

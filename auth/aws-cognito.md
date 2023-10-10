@@ -1,6 +1,6 @@
-# AWS-Cognito-auth
+# AWS Cognito
 
-- [AWS-Cognito-auth](#aws-cognito-auth)
+- [AWS Cognito](#aws-cognito-auth)
   - [Configure User Pool in AWS Console](#configure-user-pool-in-aws-console)
     - [Create User Pool in Cognito](#create-user-pool-in-cognito)
     - [Create identity provider](#create-identity-provider)
@@ -29,7 +29,7 @@
 There are 2 ways to add Amplify to your project. First, you can do it manually through AWS Console. Second, do it using Amplify CLI locally.
 Let's look at the first way.
 
-## Configure User Pool in AWS Console 
+## Configure User Pool in AWS Console
 
 ### Create User Pool in Cognito
 
