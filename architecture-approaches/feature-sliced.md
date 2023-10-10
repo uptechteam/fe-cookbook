@@ -1,8 +1,8 @@
 # Feature sliced
 
-- [What is Feature Sliced Design (FSD)?](<#what-is-feature-sliced-design-(FSD)>)
-- [Assemble correctly from Childhood!](#assemble-correctly-from-childhood)
-- [Structure example](#structure-example)
+1. [What is Feature Sliced Design (FSD)?](<#what-is-feature-sliced-design-(FSD)>)
+2. [Assemble correctly from Childhood!](#assemble-correctly-from-childhood)
+3. [Structure example](#structure-example)
 
 ## What is Feature Sliced Design (FSD)?
 

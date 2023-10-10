@@ -1,9 +1,9 @@
 # Dark Mode in React App
 
-- [CSS Variables with Context](#css-variables-with-context)
-- [Styled components](#styled-components)
-- [MUI](#mui)
-- [Media Queries](#media-queries)
+1. [CSS Variables with Context](#css-variables-with-context)
+2. [Styled components](#styled-components)
+3. [MUI](#mui)
+4. [Media Queries](#media-queries)
 
 ## CSS Variables with Context
 

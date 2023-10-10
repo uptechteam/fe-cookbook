@@ -1,13 +1,13 @@
 # Images optimization
 
-1.  [General](#general)
-2.  [Lazy-Loading Libraries](#lazy-loading-liblraries)
+1. [General](#general)
+2. [Lazy-Loading Libraries](#lazy-loading-liblraries)
     - [react-lazyload](#react-lazyload)
     - [react-progressive-graceful-image](#react-progressive-graceful-image)
     - [react-lazy-load-image-component](#react-lazy-load-image-component)
     - [react-lazy-images](#react-lazy-images)
     - [react-lazy-blur-image](#react-lazy-blur-image)
-3.  [Using different images for different viweports](#using-different-images-for-different-viweports)
+3. [Using different images for different viweports](#using-different-images-for-different-viweports)
 
 ## General
 

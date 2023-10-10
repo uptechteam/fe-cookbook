@@ -1,8 +1,8 @@
 # Leave modal
 
-- [General information](#general-information)
-- [Hook](#hook)
-- [Another approach with the useBlocker and useCallbackPrompt hooks](#another-approach-with-the-useblocker-and-usecallbackprompt-hooks)
+1. [General information](#general-information)
+2. [Hook](#hook)
+3. [Another approach with the useBlocker and useCallbackPrompt hooks](#another-approach-with-the-useblocker-and-usecallbackprompt-hooks)
 
 ## General information
 

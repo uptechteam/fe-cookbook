@@ -1,7 +1,7 @@
 # Modular
 
-- [General information](#general-information)
-- [Structure example](#structure-example)
+1. [General information](#general-information)
+2. [Structure example](#structure-example)
 
 ## General information
 

@@ -1,16 +1,16 @@
 # Date and time pickers
 
-1.  [Well-known date and time picker libraries](#well-known-date-and-time-picker-libraries)
+1. [Well-known date and time picker libraries](#well-known-date-and-time-picker-libraries)
     - [React Datepicker](#react-datepicker)
     - [MUI Pickers](#mui-pickers)
     - [React-Dates](#react-dates)
     - [React-DateTime-Picker](#react-datetime-picker)
     - [React-Day-Picker](#react-day-picker)
-2.  [Date utility libraries](#date-utility-libraries)
+2. [Date utility libraries](#date-utility-libraries)
     - [Date-fns](#date-fns)
     - [Luxon](#luxon)
     - [Day.js](#day.js)
-3.  [Summary](#summary)
+3. [Summary](#summary)
 
 ## Well-known date and time picker libraries
 

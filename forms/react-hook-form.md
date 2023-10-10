@@ -1,10 +1,10 @@
 # React hook form
 
-1.  [Setup](#setup)
-2.  [Configure form with custom fields](#configure-form-with-custom-fields)
-3.  [useFormContext](#useFormContext)
-4.  [Best practices](#best-practices)
-5.  [Optimization](#optimization)
+1. [Setup](#setup)
+2. [Configure form with custom fields](#configure-form-with-custom-fields)
+3. [useFormContext](#useFormContext)
+4. [Best practices](#best-practices)
+5. [Optimization](#optimization)
 
 ## Setup
 
