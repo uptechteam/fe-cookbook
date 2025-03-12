@@ -52,17 +52,36 @@ To use Sentry in a React application, you can follow these general steps:
   ```typescript
   import * as Sentry from "@sentry/react";
 
+  // define your environment names on the project, where Sentry should be enabled
+  const enabledForEnvironments = ['development', 'staging', 'production'];
+
+  const samplesRateByEnvironment = {
+    'development': 1.0, 
+    'staging': 0.5, 
+    'production': 0.1
+  }
+  
+  const DEFAULT_TRACING_RATE = 0.1;
+  
+  const isSentryEnabled = enabledForEnvironments.includes(ENV);
+
+  const sampleRate = samplesRateByEnvironment[ENV] || DEFAULT_TRACING_RATE;
+  
   Sentry.init({
-    dsn:
-      process.env.REACT_APP_ENV !== "local"
-        ? process.env.REACT_APP_SENTRY_DSN
-        : "",
-    environment: process.env.REACT_APP_ENV,
+    enabled: isSentryEnabled,
     release: process.env.REACT_APP_RELEASE_VERSION, // Configure this variable in your CI to make it dynamic across diffent environments
-    integrations: [new BrowserTracing()],
-    tracesSampleRate: 1.0,
+    dsn: process.env.REACT_APP_SENTRY_DSN,
+    integrations: [Sentry.browserTracingIntegration()],
+    environment: ENV,
+    profilesSampleRate: sampleRate,
+    replaysSessionSampleRate: sampleRate,
+    tracesSampleRate: sampleRate,
+    tracePropagationTargets: [
+      // define targets to which you want propagate Sentry traces (usually API host)
+      /^https:\/\/api.*\..*domain\.com.*/, 
+    ],
   });
-  ```
+```
 
 8. Configure your error boundary component:
 
